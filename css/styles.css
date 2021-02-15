@@ -1,0 +1,105 @@
+#lp-container {
+    margin: auto;
+    width: 1000px;
+}
+
+.lp-full-width {
+    height: 490px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.lp-full-width-image {
+    position: absolute;
+    z-index: -100;
+
+}
+
+.lp-full-width img {
+    height: 100%;
+}
+
+.lp-full-width-copy {
+    width: 50%;
+    height: 150px;
+    margin-left: 60px;
+    color: white;
+}
+
+.lp-full-width-copy h3 {
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+.lp-small-copy {
+    font-size: 70% !important;
+    text-transform: lowercase;
+}
+
+.lp-full-width button {
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.lp-full-width button:hover {
+    cursor: pointer;
+}
+
+.lp-full-width p {
+    margin: 15px 0 25px 0;
+}
+
+.lp-half-width {
+    height: 382px;
+    width: 483px;
+    position: relative;
+    display: inline-block;
+}
+
+.lp-half-right {
+    margin-left: 30px;
+}
+
+.lp-half-width-img {
+    max-width: 100%;
+    max-height: 220px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.lp-half-width img {
+    width: 100%;
+    max-height: 220px;
+}
+
+
+.lp-half-width h3 {
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+.lp-half-width p {
+    margin: 20px 0 25px 0;
+}
+
+.lp-half-width button {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
+    font-size: 1em;
+    margin-left: -5px;
+}
+
+.lp-half-width button:hover {
+    cursor: pointer;
+}
