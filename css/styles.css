@@ -3,6 +3,14 @@
     width: 1000px;
 }
 
+#lp-container p {
+    font-size: 1em;
+}
+
+#lp-container h3 {
+    font-family: Tungsten, Verdana, Arial, sans-serif;
+}
+
 .lp-full-width {
     height: 490px;
     width: 100%;
@@ -19,6 +27,10 @@
 
 }
 
+.lp-full-width h3 {
+    font-size: 3em;
+}
+
 .lp-full-width img {
     height: 100%;
 }
@@ -32,7 +44,6 @@
 
 .lp-full-width-copy h3 {
     text-transform: uppercase;
-    font-size: 2em;
 }
 
 .lp-small-copy {
@@ -40,16 +51,17 @@
     text-transform: lowercase;
 }
 
-.lp-full-width button {
-    width: 200px;
-    height: 50px;
-    color: white;
-    background-color: transparent;
+.lp-full-width a {
+    position: relative;
+    padding: 20px 50px 20px 50px;
     border: 1px solid white;
+    color: white;
+    display: inline-block;
+    text-decoration: none;
 }
 
-.lp-full-width button:hover {
-    cursor: pointer;
+.lp-full-width a:hover {
+    color: white;
 }
 
 .lp-full-width p {
@@ -61,13 +73,14 @@
     width: 483px;
     position: relative;
     display: inline-block;
+    margin-bottom: 28px;
 }
 
 .lp-half-right {
     margin-left: 30px;
 }
 
-.lp-half-width-img {
+.lp-half-width-image {
     max-width: 100%;
     max-height: 220px;
     overflow: hidden;
@@ -77,9 +90,11 @@
 
 .lp-half-width img {
     width: 100%;
-    max-height: 220px;
 }
 
+.lp-half-width-copy {
+    width: 90%;
+}
 
 .lp-half-width h3 {
     margin-top: 25px;
@@ -90,16 +105,12 @@
     margin: 20px 0 25px 0;
 }
 
-.lp-half-width button {
-    background-color: transparent;
-    border: none;
-    text-decoration: underline;
-    text-transform: uppercase;
+.lp-half-width a {
     font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
+    text-transform: uppercase;
     font-size: 1em;
-    margin-left: -5px;
 }
 
-.lp-half-width button:hover {
-    cursor: pointer;
+.lp-half-width a:hover {
+    color: black;
 }
