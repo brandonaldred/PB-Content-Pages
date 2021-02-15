@@ -1,6 +1,7 @@
 #lp-container {
     margin: auto;
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
 }
 
 #lp-container p {
@@ -36,9 +37,6 @@
 }
 
 .lp-full-width-copy {
-    width: 50%;
-    height: 150px;
-    margin-left: 60px;
     color: white;
 }
 
@@ -47,7 +45,7 @@
 }
 
 .lp-small-copy {
-    font-size: 70% !important;
+    font-size: 70%;
     text-transform: lowercase;
 }
 
@@ -69,15 +67,8 @@
 }
 
 .lp-half-width {
-    height: 382px;
-    width: 483px;
     position: relative;
-    display: inline-block;
     margin-bottom: 28px;
-}
-
-.lp-half-right {
-    margin-left: 30px;
 }
 
 .lp-half-width-image {
@@ -86,10 +77,6 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-}
-
-.lp-half-width img {
-    width: 100%;
 }
 
 .lp-half-width-copy {
@@ -113,4 +100,47 @@
 
 .lp-half-width a:hover {
     color: black;
+}
+
+@media (min-width: 1000px) {
+    .lp-full-width-copy {
+        width: 50%;
+        height: 150px;
+        margin-left: 60px;
+    }
+
+
+    .lp-half-width {
+        height: 382px;
+        width: 483px;
+        display: inline-block;      
+    }
+
+    .lp-half-right {
+        margin-left: 30px;
+    }
+
+    .lp-half-width img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .lp-full-width:last-child {
+        margin-bottom: 0;
+    }
+    .lp-full-width-copy {
+        width: 80%;
+        margin: auto;
+    }
+
+    .lp-half-width {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .lp-half-width img {
+        width: 100%;
+    }
 }
