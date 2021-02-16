@@ -82,7 +82,7 @@ hr {
     text-transform: lowercase;
 }
 
-.lp-full-width a {
+.lp-white-outline-button {
     position: relative;
     padding: 20px 50px 20px 50px;
     border: 1px solid white;
@@ -91,7 +91,7 @@ hr {
     text-decoration: none;
 }
 
-.lp-full-width a:hover {
+.lp-white-outline-button:hover {
     color: white;
 }
 
@@ -220,7 +220,11 @@ hr {
 
 .lp-full-width-info {
     margin-bottom: 30px;
-} 
+}
+
+.lp-full-width-info-copy a {
+
+}
 
 @media (min-width: 1000px) {
     .lp-full-width-copy {
