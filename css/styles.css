@@ -14,6 +14,13 @@
   }
 xmp {
     font-size: 12px;
+    max-width: 1000px;
+    overflow-wrap: break-word;
+}
+
+hr {
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 #lp-container {
     margin: auto;
@@ -27,6 +34,15 @@ xmp {
 
 #lp-container h3 {
     font-family: 'Tungsten', Verdana, Arial, sans-serif !important;
+    letter-spacing: 3px;
+}
+
+.lp-body-copy {
+    font-size: 18px !important;
+    line-height: 1.5em !important;
+    max-width: 680px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px 0 20px;
 }
 
 .lp-full-width {
@@ -119,6 +135,37 @@ xmp {
     color: black;
 }
 
+.lp-lead-in {
+    margin-bottom: 30px;
+}
+
+.lp-lead-in-copy {
+    max-width: 680px;
+    padding: 0 40px 0 40px;
+    margin: auto;
+    text-align: center;
+}
+
+.lp-lead-in-copy h3{
+    font-size: 4.5em;
+    margin-bottom: 26px;
+}
+
+.lp-lead-in-copy p {
+    font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
+    font-size: 1em;
+    color: #464647;
+    margin-bottom: 30px;
+}
+
+.lp-lead-in img {
+    max-width: 1000px;
+}
+
+.lp-product-grid {
+    width: 100%;
+}
+
 @media (min-width: 1000px) {
     .lp-full-width-copy {
         width: 50%;
@@ -133,7 +180,7 @@ xmp {
         display: inline-block;      
     }
 
-    .lp-half-width:nth-child(odd) {
+    .lp-half-width:nth-child(even) {
         margin-left: 30px;
     }
 
@@ -143,9 +190,6 @@ xmp {
 }
 
 @media (max-width: 900px) {
-    .lp-full-width:last-child {
-        margin-bottom: 0;
-    }
     .lp-full-width-copy {
         width: 80%;
         margin: auto;
