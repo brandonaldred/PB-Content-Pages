@@ -217,6 +217,11 @@ hr {
 .lp-full-width-product .lp-half-width-product-copy p {
     margin: 30px 0;
 }
+
+.lp-full-width-info {
+    margin-bottom: 30px;
+} 
+
 @media (min-width: 1000px) {
     .lp-full-width-copy {
         width: 50%;
@@ -254,6 +259,36 @@ hr {
     .lp-product-foot a {
         max-width: 515px;
         padding: 30px 100px 30px 100px;
+    }
+    .lp-full-width-info {
+        display: flex;
+        height: 505px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .lp-full-width-info-image {
+        width: 45%;
+    }
+
+    .lp-full-width-info-copy {
+        width: 55%;
+        background-color: #323233;
+        padding: 0 50px 0 30px;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+
+    }
+
+    .lp-full-width-info-copy h3 {
+    }
+
+    .lp-full-width-info-copy p {
+        margin: 30px 0;
+        line-height: 1.5em;
+        width: 90%;
     }
 }
 
