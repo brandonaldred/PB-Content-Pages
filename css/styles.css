@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'Tungsten';
+    src: url('../fonts/Tungsten-Medium.woff2') format('woff2'), url('../fonts/Tungsten-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Univers LT Std';
+    src: url('../fonts/UniversLTStd-Cn.woff2') format('woff2'), url('../fonts/UniversLTStd-Cn.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+xmp {
+    font-size: 12px;
+}
 #lp-container {
     margin: auto;
     width: 100%;
@@ -9,7 +26,7 @@
 }
 
 #lp-container h3 {
-    font-family: Tungsten, Verdana, Arial, sans-serif;
+    font-family: 'Tungsten', Verdana, Arial, sans-serif !important;
 }
 
 .lp-full-width {
@@ -116,7 +133,7 @@
         display: inline-block;      
     }
 
-    .lp-half-right {
+    .lp-half-width:nth-child(odd) {
         margin-left: 30px;
     }
 
