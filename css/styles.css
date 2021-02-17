@@ -38,6 +38,13 @@ hr {
     letter-spacing: 3px;
 }
 
+#lp-container .lp-body-copy-title {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    max-width: 680px;
+    padding: 0 20px 0 20px;
+}
+
 .lp-body-copy {
     font-size: 18px !important;
     line-height: 1.5em !important;
@@ -306,11 +313,16 @@ hr {
         width: 313;
         height: 238px;
         float: left;
-        margin: 0 30px 30px -160px;
+        margin: 0 30px 30px 0px;
     }
 }
 
 @media (max-width: 900px) {
+
+    #lp-container img{
+        text-align: center;
+    }
+
     .lp-full-width-copy {
         width: 80%;
         margin: auto;
@@ -361,5 +373,13 @@ hr {
         border: none;
         color: black !important;
         display: block;
+    }
+
+    .lp-body-copy-image {
+        width: 90%;
+        height: 238px;
+        display: block;
+        margin: 0 auto 30px auto;
+
     }
 }
