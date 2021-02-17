@@ -383,4 +383,8 @@ hr {
         margin: 0 auto 30px auto;
 
     }
+
+    .lp-lead-in img {
+        max-width: 100%;
+    }
 }
