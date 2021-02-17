@@ -240,14 +240,14 @@ hr {
 .lp-full-width-info-gray-outline-button {
     position: relative;
     padding: 20px 50px 20px 50px;
-    border: 1px solid #323233;
-    color: #323233;
+    border: 1px solid #000000;
+    color: #000000;
     display: inline-block;
     text-decoration: none;
 }
 
 .lp-full-width-info-gray-outline-button:hover {
-    color: #323233;
+    color: #000000;
 }
 
 .lp-full-width-info-white-outline-button {
