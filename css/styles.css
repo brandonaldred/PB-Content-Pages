@@ -1,3 +1,4 @@
+/* UPDATED */
 @font-face {
     font-family: 'Tungsten';
     src: url('../fonts/Tungsten-Medium.woff2') format('woff2'), url('../fonts/Tungsten-Medium.woff') format('woff');
@@ -305,7 +306,7 @@ hr {
         width: 313;
         height: 238px;
         float: left;
-        margin: 0 30px 30px -30px;
+        margin: 0 30px 30px
     }
 }
 
