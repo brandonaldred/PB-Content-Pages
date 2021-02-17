@@ -239,7 +239,7 @@ hr {
 
 .lp-full-width-info-gray-outline-button {
     position: relative;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 50px 16px 50px;
     border: 1px solid #000000;
     color: #000000;
     display: inline-block;
@@ -252,7 +252,7 @@ hr {
 
 .lp-full-width-info-white-outline-button {
     position: relative;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 50px 16px 50px;
     border: 1px solid white;
     color: white;
     display: inline-block;
