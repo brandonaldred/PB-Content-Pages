@@ -236,6 +236,32 @@ hr {
     width: 90%;
 }
 
+.lp-full-width-info-white-outline-button {
+    position: relative;
+    padding: 20px 50px 20px 50px;
+    border: 1px solid white;
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.lp-full-width-info-white-outline-button:hover {
+    color: white;
+}
+
+.lp-full-width-info-dk-bg {
+    background-color: #323233;
+}
+
+.lp-full-width-info-copy {
+    padding: 50px 30px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
+
 @media (min-width: 1000px) {
     .lp-full-width-copy {
         width: 50%;
@@ -287,26 +313,6 @@ hr {
 
     .lp-full-width-info-copy {
         width: 55%;
-        background-color: #323233;
-        padding: 0 50px 0 30px;
-        color: white;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-
-    }
-
-    .lp-full-width-info-white-outline-button {
-        position: relative;
-        padding: 20px 50px 20px 50px;
-        border: 1px solid white;
-        color: white;
-        display: inline-block;
-        text-decoration: none;
-    }
-    
-    .lp-full-width-info-white-outline-button:hover {
-        color: white;
     }
 
     .lp-body-copy-image {
@@ -358,22 +364,16 @@ hr {
     }
 
     .lp-full-width-info {
-        width: 80%;
+        width: 90%;
         margin: auto;
         overflow: hidden;
+        padding: 20px;
     }
 
     .lp-full-width-info-image {
         max-height: 300px;
         overflow: hidden;
-        margin-bottom: 30px;
         margin-top: 30px;
-    }
-
-    .lp-full-width-info-white-outline-button {
-        border: none;
-        color: black !important;
-        display: block;
     }
 
     .lp-body-copy-image {
@@ -387,4 +387,5 @@ hr {
     .lp-lead-in img {
         max-width: 100%;
     }
+
 }
