@@ -37,6 +37,7 @@ hr {
     font-family: 'Tungsten', Verdana, Arial, sans-serif !important;
     letter-spacing: 3px;
     text-transform: uppercase;
+    color: #202024;
 }
 
 #lp-container .lp-body-copy-title {
@@ -72,6 +73,7 @@ hr {
 
 .lp-full-width h3 {
     font-size: 3em;
+    color: white !important;
 }
 
 .lp-full-width img {
@@ -134,10 +136,10 @@ hr {
     margin: 20px 0 25px 0;
 }
 
-.lp-half-width-product a {
+.lp-half-width-product-copy a {
     font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: .9em;
 }
 
 .lp-half-width-product a:hover {
@@ -265,7 +267,11 @@ hr {
 
 .lp-full-width-info-dk-bg {
     background-color: #323233;
-    color: white;
+    color: white !important;
+}
+
+.lp-full-width-info-dk-bg h3 {
+    color: white !important;
 }
 
 .lp-full-width-info-lt-bg {
