@@ -227,12 +227,16 @@ hr {
 }
 
 @media (min-width: 1000px) {
+    
+    .lp-product-grid {
+        height: 380px;
+    }
+
     .lp-full-width-copy {
         width: 50%;
         height: 150px;
         margin-left: 60px;
     }
-
 
     .lp-half-width-product {
         height: 382px;
