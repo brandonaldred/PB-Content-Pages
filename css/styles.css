@@ -143,6 +143,7 @@ hr {
     font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
     text-transform: uppercase;
     font-size: .9em;
+    letter-spacing: .1em;
 }
 
 .lp-half-width-product a:hover {
