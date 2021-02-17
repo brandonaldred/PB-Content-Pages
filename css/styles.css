@@ -219,19 +219,16 @@ hr {
 }
 
 .lp-full-width-info {
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
 }
 
-.lp-full-width-info-copy a {
-
+.lp-full-width-info-copy p {
+    margin: 30px 0;
+    line-height: 1.5em;
+    width: 90%;
 }
 
 @media (min-width: 1000px) {
-    
-    .lp-product-grid {
-        height: 380px;
-    }
-
     .lp-full-width-copy {
         width: 50%;
         height: 150px;
@@ -264,6 +261,7 @@ hr {
         width: 48%;
         margin: auto 0 auto 30px;
     }
+
     .lp-product-foot a {
         max-width: 515px;
         padding: 30px 100px 30px 100px;
@@ -290,13 +288,24 @@ hr {
 
     }
 
-    .lp-full-width-info-copy h3 {
+    .lp-full-width-info-white-outline-button {
+        position: relative;
+        padding: 20px 50px 20px 50px;
+        border: 1px solid white;
+        color: white;
+        display: inline-block;
+        text-decoration: none;
+    }
+    
+    .lp-full-width-info-white-outline-button:hover {
+        color: white;
     }
 
-    .lp-full-width-info-copy p {
-        margin: 30px 0;
-        line-height: 1.5em;
-        width: 90%;
+    .lp-body-copy-image {
+        width: 313;
+        height: 238px;
+        float: left;
+        margin: 0 30px 30px -30px;
     }
 }
 
@@ -333,5 +342,23 @@ hr {
 
     .lp-full-width-product .lp-half-width-product-image {
         margin-bottom: 30px;
+    }
+
+    .lp-full-width-info {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .lp-full-width-info-image {
+        max-height: 300px;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    .lp-full-width-info-white-outline-button {
+        border: none;
+        color: black !important;
+        display: block;
     }
 }
