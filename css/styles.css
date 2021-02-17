@@ -36,6 +36,7 @@ hr {
 #lp-container h3 {
     font-family: 'Tungsten', Verdana, Arial, sans-serif !important;
     letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 #lp-container .lp-body-copy-title {
@@ -236,6 +237,19 @@ hr {
     width: 90%;
 }
 
+.lp-full-width-info-gray-outline-button {
+    position: relative;
+    padding: 20px 50px 20px 50px;
+    border: 1px solid #323233;
+    color: #323233;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.lp-full-width-info-gray-outline-button:hover {
+    color: #323233;
+}
+
 .lp-full-width-info-white-outline-button {
     position: relative;
     padding: 20px 50px 20px 50px;
@@ -251,11 +265,16 @@ hr {
 
 .lp-full-width-info-dk-bg {
     background-color: #323233;
+    color: white;
+}
+
+.lp-full-width-info-lt-bg {
+    background-color: #F5F5F7;
+    color: #323233;
 }
 
 .lp-full-width-info-copy {
     padding: 50px 30px;
-    color: white;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
