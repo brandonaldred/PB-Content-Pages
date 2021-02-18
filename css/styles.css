@@ -47,7 +47,7 @@ hr {
 }
 
 .lp-body-copy {
-    font-size: 18px !important;
+    font-size: 1em !important;
     line-height: 1.5em !important;
     max-width: 680px;
     margin: 0 auto 30px auto;
