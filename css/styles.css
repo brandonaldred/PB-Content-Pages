@@ -310,7 +310,7 @@ hr {
 
 @media (min-width: 1000px) {
     .lp-full-width-copy {
-        width: 50%;
+        width: 75%;
         height: 150px;
         margin-left: 60px;
     }
