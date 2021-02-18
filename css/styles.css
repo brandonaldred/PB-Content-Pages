@@ -90,6 +90,7 @@ hr {
 .lp-small-copy {
     font-size: 70%;
     text-transform: lowercase;
+    display: inline-block;
 }
 
 .lp-white-outline-button {
