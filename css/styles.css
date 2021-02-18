@@ -424,10 +424,9 @@ hr {
     }
 
     .lp-full-width-info {
-        width: 90%;
+        width: 100%;
         margin: auto;
         overflow: hidden;
-        padding: 20px;
     }
 
     .lp-full-width-info-image {
@@ -446,6 +445,7 @@ hr {
 
     .lp-lead-in img {
         margin: auto;
+        width: 100%;
     }
 
     .lp-three-col {
