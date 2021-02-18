@@ -162,7 +162,6 @@ hr {
 }
 
 .lp-lead-in-copy h3{
-    font-size: 4.5em;
     margin-bottom: 26px;
 }
 
@@ -382,6 +381,10 @@ hr {
     .lp-three-col {
         width: 100%;
     }
+
+    .lp-lead-in-copy h3{
+        font-size: 4.5em;
+    }
 }
 
 @media (max-width: 900px) {
@@ -457,5 +460,9 @@ hr {
     .lp-column {
         width: 100%;
         margin: 30px auto 30px auto;
+    }
+
+    .lp-lead-in-copy h3{
+        font-size: 4em;
     }
 }
