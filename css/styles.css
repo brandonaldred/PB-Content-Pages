@@ -247,6 +247,10 @@ hr {
     width: 90%;
 }
 
+.lp-full-width-info-copy a {
+    text-transform: uppercase;
+}
+
 .lp-full-width-info-gray-outline-button {
     position: relative;
     padding: 15px 50px 11px 50px;
@@ -442,6 +446,10 @@ hr {
         max-height: 300px;
         overflow: hidden;
         margin-top: 30px;
+    }
+
+    .lp-full-width-info-image img {
+        width: 100%;
     }
 
     .lp-body-copy-image {
