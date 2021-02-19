@@ -87,6 +87,10 @@ hr {
     text-transform: uppercase;
 }
 
+.lp-full-width-info-copy h3 {
+    font-size: 3em;
+}
+
 .lp-small-copy {
     font-size: 70%;
     text-transform: lowercase;
@@ -249,6 +253,11 @@ hr {
 
 .lp-full-width-info-copy a {
     text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.lp-full-width-info-copy a:hover {
+    color: black;
 }
 
 .lp-full-width-info-gray-outline-button {
@@ -450,6 +459,7 @@ hr {
 
     .lp-full-width-info-image img {
         width: 100%;
+        margin-top: -100px;
     }
 
     .lp-body-copy-image {
