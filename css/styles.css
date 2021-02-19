@@ -196,6 +196,10 @@ hr {
     font-size: 2.5em;
 }
 
+.lp-product-head a {
+    text-transform: uppercase;
+}
+
 .lp-product-head a:hover {
     color: black;
 }
@@ -222,6 +226,7 @@ hr {
     color: white;
     text-decoration: none;
     box-sizing: border-box;
+    text-transform: uppercase;
 }
 
 .lp-product-foot a:hover {
