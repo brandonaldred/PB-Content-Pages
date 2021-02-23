@@ -1,5 +1,5 @@
 /* UPDATED */
-@font-face {
+/*@font-face {
     font-family: 'Tungsten';
     src: url('../fonts/Tungsten-Medium.woff2') format('woff2'), url('../fonts/Tungsten-Medium.woff') format('woff');
     font-weight: 500;
@@ -21,7 +21,7 @@ xmp {
 
 hr {
     margin: 30px;
-}
+} */
 #lp-container {
     margin: auto;
     width: 100%;
@@ -46,7 +46,7 @@ hr {
     padding: 0 20px 0 20px;
 }
 
-.lp-body-copy {
+#lp-container .lp-body-copy {
     font-size: 1em !important;
     line-height: 1.5em !important;
     max-width: 680px;
@@ -54,7 +54,7 @@ hr {
     padding: 0 20px 0 20px;
 }
 
-.lp-full-width {
+#lp-container .lp-full-width {
     height: 490px;
     width: 100%;
     position: relative;
@@ -64,36 +64,36 @@ hr {
     margin-bottom: 30px;
 }
 
-.lp-full-width-image {
+#lp-container .lp-full-width-image {
     position: absolute;
-    z-index: -100;
 
 }
 
-.lp-full-width h3 {
+#lp-container .lp-full-width h3 {
     font-size: 3em;
     color: white !important;
 }
 
-.lp-full-width-copy {
+#lp-container .lp-full-width-copy {
     color: white;
+    z-index: 999;
 }
 
-.lp-full-width-copy h3 {
+#lp-container .lp-full-width-copy h3 {
     text-transform: uppercase;
 }
 
-.lp-full-width-info-copy h3 {
+#lp-container .lp-full-width-info-copy h3 {
     font-size: 3em;
 }
 
-.lp-small-copy {
+#lp-container .lp-small-copy {
     font-size: 70%;
     text-transform: lowercase;
     display: inline-block;
 }
 
-.lp-white-outline-button {
+#lp-container .lp-white-outline-button {
     position: relative;
     padding: 20px 50px 20px 50px;
     border: 1px solid white;
@@ -102,20 +102,20 @@ hr {
     text-decoration: none;
 }
 
-.lp-white-outline-button:hover {
+#lp-container .lp-white-outline-button:hover {
     color: white;
 }
 
-.lp-full-width p {
+#lp-container .lp-full-width p {
     margin: 15px 0 25px 0;
 }
 
-.lp-half-width-product {
+#lp-container .lp-half-width-product {
     position: relative;
     margin-bottom: 28px;
 }
 
-.lp-half-width-product-image {
+#lp-container .lp-half-width-product-image {
     max-width: 100%;
     height: 220px;
     overflow: hidden;
@@ -123,47 +123,47 @@ hr {
     align-items: center;
 }
 
-.lp-half-width-product-copy {
+#lp-container .lp-half-width-product-copy {
     width: 90%;
 }
 
-.lp-half-width-product-copy h3 {
+#lp-container .lp-half-width-product-copy h3 {
     margin-top: 25px;
     text-transform: uppercase;
     font-size: 2em;
 }
 
-.lp-half-width-product p {
+#lp-container .lp-half-width-product p {
     margin: 20px 0 20px 0;
 }
 
-.lp-half-width-product-copy a {
+#lp-container .lp-half-width-product-copy a {
     font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
     text-transform: uppercase;
     font-size: .9em;
     letter-spacing: .1em;
 }
 
-.lp-half-width-product a:hover {
+#lp-container .lp-half-width-product a:hover {
     color: black;
 }
 
-.lp-lead-in {
+#lp-container .lp-lead-in {
     margin-bottom: 30px;
 }
 
-.lp-lead-in-copy {
+#lp-container .lp-lead-in-copy {
     max-width: 680px;
     padding: 0 40px 0 40px;
     margin: auto;
     text-align: center;
 }
 
-.lp-lead-in-copy h3{
+#lp-container .lp-lead-in-copy h3{
     margin-bottom: 26px;
 }
 
-.lp-lead-in-copy p {
+#lp-container .lp-lead-in-copy p {
     font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
     font-size: .9em !important;
     color: #464647;
@@ -172,62 +172,62 @@ hr {
     letter-spacing: .1em;
 }
 
-.lp-lead-in img {
+#lp-container .lp-lead-in img {
     max-width: 1000px;
 }
 
-.lp-product {
+#lp-container .lp-product {
     margin-bottom: 30px;
 }
 
-.lp-product-grid {
+#lp-container .lp-product-grid {
     width: 100%;
     margin-bottom: 30px;
 }
 
-.lp-product-head {
+#lp-container .lp-product-head {
     max-width: 680px;
     margin: 50px auto 30px auto;
     text-align: center;
 }
 
-.lp-product-head h3 {
+#lp-container .lp-product-head h3 {
     margin-bottom: 25px;
     font-size: 2.5em;
 }
 
-.lp-product-head a {
+#lp-container .lp-product-head a {
     text-transform: uppercase;
 }
 
-.lp-product-head a:hover {
+#lp-container .lp-product-head a:hover {
     color: black;
 }
 
-.lp-product-grid .lp-half-width-product-image {
+#lp-container .lp-product-grid .lp-half-width-product-image {
     background-color: #FAFAFA;
 }
 
-.lp-product-grid .lp-half-width-product-image img {
+#lp-container .lp-product-grid .lp-half-width-product-image img {
     margin: auto;
     mix-blend-mode: multiply;
     max-height: 230px;
     max-width: 300px;
 }
 
-.lp-product-grid .lp-half-width-image img {
+#lp-container .lp-product-grid .lp-half-width-image img {
     margin: auto;
     mix-blend-mode: multiply;
     max-height: 100%;
     max-width: 100%;
 }
 
-.lp-product-foot {
+#lp-container .lp-product-foot {
     text-align: center;
     height: 100px;
 }
 
-.lp-product-foot a {
+#lp-container .lp-product-foot a {
     display: block;
     background-color: #2D2D2E;
     margin: auto;
@@ -237,34 +237,34 @@ hr {
     text-transform: uppercase;
 }
 
-.lp-product-foot a:hover {
+#lp-container .lp-product-foot a:hover {
     color: white;
 }
 
-.lp-full-width-product .lp-half-width-product-copy p {
+#lp-container .lp-full-width-product .lp-half-width-product-copy p {
     margin: 30px 0;
 }
 
-.lp-full-width-info {
+#lp-container .lp-full-width-info {
     margin-bottom: 30px !important;
 }
 
-.lp-full-width-info-copy p {
+#lp-container .lp-full-width-info-copy p {
     margin: 30px 0;
     line-height: 1.5em;
     width: 90%;
 }
 
-.lp-full-width-info-copy a {
+#lp-container .lp-full-width-info-copy a {
     text-transform: uppercase;
     letter-spacing: .1em;
 }
 
-.lp-full-width-info-copy a:hover {
+#lp-container .lp-full-width-info-copy a:hover {
     color: black;
 }
 
-.lp-full-width-info-gray-outline-button {
+#lp-container .lp-full-width-info-gray-outline-button {
     position: relative;
     padding: 15px 50px 11px 50px;
     border: 1px solid #000000;
@@ -273,11 +273,11 @@ hr {
     text-decoration: none;
 }
 
-.lp-full-width-info-gray-outline-button:hover {
+#lp-container .lp-full-width-info-gray-outline-button:hover {
     color: #000000;
 }
 
-.lp-full-width-info-white-outline-button {
+#lp-container .lp-full-width-info-white-outline-button {
     position: relative;
     padding: 15px 50px 11px 50px;
     border: 1px solid white;
@@ -286,33 +286,33 @@ hr {
     text-decoration: none;
 }
 
-.lp-full-width-info-white-outline-button:hover {
+#lp-container .lp-full-width-info-white-outline-button:hover {
     color: white;
 }
 
-.lp-full-width-info-dk-bg {
+#lp-container .lp-full-width-info-dk-bg {
     background-color: #323233;
     color: white !important;
 }
 
-.lp-full-width-info-dk-bg h3 {
+#lp-container .lp-full-width-info-dk-bg h3 {
     color: white !important;
 }
 
-.lp-full-width-info-dk-bg a {
+#lp-container .lp-full-width-info-dk-bg a {
     color: white;
 }
 
-.lp-full-width-info-dk-bg a:hover {
+#lp-container .lp-full-width-info-dk-bg a:hover {
     color: white;
 }
 
-.lp-full-width-info-lt-bg {
+#lp-container .lp-full-width-info-lt-bg {
     background-color: #F5F5F7;
     color: #000000;
 }
 
-.lp-full-width-info-copy {
+#lp-container .lp-full-width-info-copy {
     padding: 50px 30px;
     display: flex;
     flex-wrap: wrap;
@@ -320,57 +320,57 @@ hr {
 
 }
 
-.lp-three-col {
+#lp-container .lp-three-col {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 80px;
 }
 
-.lp-column img {
+#lp-container .lp-column img {
     max-width: 313px;
     max-height: 220px;
 }
 
-.lp-column-title {
+#lp-container .lp-column-title {
     letter-spacing: .1em;
     margin: 27px 0 18px 0;
     text-transform: uppercase;
 }
 
-.lp-video iframe {
+#lp-container .lp-video iframe {
     width: 100%;
     height: 100%;
 }
 
 @media (min-width: 1000px) {
-    .lp-video {
+    #lp-container .lp-video {
         margin: 80px auto 80px auto;
         width: 680px;
         height: 370px;
     }
 
-    .lp-full-width-copy {
+    #lp-container .lp-full-width-copy {
         width: 75%;
         height: 150px;
         margin-left: 60px;
     }
 
-    .lp-full-width img {
+    #lp-container .lp-full-width img {
         max-height: 100%;
         max-width: 100%;
     }
 
-    .lp-half-width-product {
+    #lp-container .lp-half-width-product {
         width: 483px;
         display: inline-block;      
     }
 
-    .lp-half-width-product:nth-child(even) {
+    #lp-container .lp-half-width-product:nth-child(even) {
         margin-left: 30px;
     }
 
-    .lp-half-width-product img {
+    #lp-container .lp-half-width-product img {
         width: 100%;
     }
     .lp-full-width-product {
@@ -378,35 +378,36 @@ hr {
         width: 100%;
     }
 
-    .lp-full-width-product .lp-half-width-product-image {
+    #lp-container .lp-full-width-product .lp-half-width-product-image {
         width: 48%;
     }
 
-    .lp-full-width-product .lp-half-width-product-copy {
+    #lp-container .lp-full-width-product .lp-half-width-product-copy {
         width: 48%;
         margin: auto 0 auto 30px;
     }
 
-    .lp-product-foot a {
+    #lp-container .lp-product-foot a {
         max-width: 515px;
         padding: 30px 100px 30px 100px;
     }
-    .lp-full-width-info {
+    
+    #lp-container .lp-full-width-info {
         display: flex;
         height: 505px;
         width: 100%;
         overflow: hidden;
     }
 
-    .lp-full-width-info-image {
+    #lp-container .lp-full-width-info-image {
         width: 45%;
     }
 
-    .lp-full-width-info-copy {
+    #lp-container .lp-full-width-info-copy {
         width: 55%;
     }
 
-    .lp-body-copy-image {
+    #lp-container .lp-body-copy-image {
         max-width: 313;
         max-height: 238px;
         float: left;
@@ -420,15 +421,15 @@ hr {
         margin: 0 0px 30px 30px;
     } */
 
-    .lp-column {
+    #lp-container .lp-column {
         width: 313px;
     }
 
-    .lp-three-col {
+    #lp-container .lp-three-col {
         width: 100%;
     }
 
-    .lp-lead-in-copy h3{
+    #lp-container .lp-lead-in-copy h3{
         font-size: 4.5em;
     }
 }
@@ -438,22 +439,22 @@ hr {
         text-align: center;
     }
 
-    .lp-full-width img {
+    #lp-container .lp-full-width img {
         max-height: 100%;
     }
 
-    .lp-video {
+    #lp-container .lp-video {
         margin: 80px auto 90px auto;
         width: 90%;
         height: 238px;
     }
 
-    .lp-full-width-copy {
+    #lp-container .lp-full-width-copy {
         width: 80%;
         margin: auto;
     }
 
-    .lp-half-width-product {
+    #lp-container .lp-half-width-product {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
@@ -463,43 +464,44 @@ hr {
         width: 100%;
     }
 
-    .lp-product {
+    #lp-container .lp-product {
         width: 90%;
         margin: auto;
     }
-    .lp-product-foot a {
+
+    #lp-container .lp-product-foot a {
         padding: 20px 20px;
         width: 80%;
     }
 
-    .lp-full-width-product {
+    #lp-container .lp-full-width-product {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .lp-full-width-product .lp-half-width-product-image {
+    #lp-container .lp-full-width-product .lp-half-width-product-image {
         margin-bottom: 30px;
     }
 
-    .lp-full-width-info {
+    #lp-container .lp-full-width-info {
         width: 100%;
         margin: auto;
         overflow: hidden;
     }
 
-    .lp-full-width-info-image {
+    #lp-container .lp-full-width-info-image {
         max-height: 300px;
         overflow: hidden;
         margin-top: 30px;
     }
 
-    .lp-full-width-info-image img {
+    #lp-container .lp-full-width-info-image img {
         width: 100%;
         margin-top: -50px;
     }
 
-    .lp-body-copy-image {
+    #lp-container .lp-body-copy-image {
         max-width: 90%;
         max-height: 238px;
         display: block;
@@ -507,22 +509,22 @@ hr {
 
     }
 
-    .lp-lead-in img {
+    #lp-container .lp-lead-in img {
         margin: auto;
         width: 100%;
     }
 
-    .lp-three-col {
+    #lp-container .lp-three-col {
         width: 90%;
         margin: 0 auto 50px auto;
     }
 
-    .lp-column {
+    #lp-container .lp-column {
         width: 100%;
         margin: 30px auto 30px auto;
     }
 
-    .lp-lead-in-copy h3{
+    #lp-container .lp-lead-in-copy h3{
         font-size: 3.5em;
     }
 }
