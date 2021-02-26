@@ -1,4 +1,4 @@
-/* UPDATED */
+ /* UPDATED */
 /*@font-face {
     font-family: 'Tungsten';
     src: url('../fonts/Tungsten-Medium.woff2') format('woff2'), url('../fonts/Tungsten-Medium.woff') format('woff');
@@ -97,9 +97,9 @@ hr {
     position: relative;
     padding: 20px 50px 20px 50px;
     border: 1px solid white;
-    color: white;
+    color: white !important;
     display: inline-block;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 #lp-container .lp-white-outline-button:hover {
@@ -268,9 +268,9 @@ hr {
     position: relative;
     padding: 15px 50px 11px 50px;
     border: 1px solid #000000;
-    color: #000000;
+    color: #000000 !important;
     display: inline-block;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 #lp-container .lp-full-width-info-gray-outline-button:hover {
@@ -281,9 +281,9 @@ hr {
     position: relative;
     padding: 15px 50px 11px 50px;
     border: 1px solid white;
-    color: white;
+    color: white !important;
     display: inline-block;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 #lp-container .lp-full-width-info-white-outline-button:hover {
@@ -356,9 +356,13 @@ hr {
         margin-left: 60px;
     }
 
+    #lp-container .lp-full-width-image {
+        width: 100% !important;
+    }
+
     #lp-container .lp-full-width img {
         max-height: 100%;
-        max-width: 100%;
+        width: 100% !important;
     }
 
     #lp-container .lp-half-width-product {
@@ -435,8 +439,20 @@ hr {
 }
 
 @media (max-width: 999px) {
+    #lp-container .lp-full-width h3 {
+        font-size: 2em;
+    }
+
+    #lp-container .lp-full-width-info-copy h3 {
+        font-size: 2em;
+    }
+
     #lp-container img{
         text-align: center;
+    }
+
+    #lp-container .lp-full-width-image {
+        height: 100% !important;
     }
 
     #lp-container .lp-full-width img {
