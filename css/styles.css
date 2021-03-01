@@ -343,6 +343,22 @@ hr {
     height: 100%;
 }
 
+.lp-builder-div {
+    max-width: 450px;
+    display: inline-block;
+    padding: 20px;
+}
+
+.lp-builder-div:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.lp-builder-div img{
+    max-width: 450px;
+    mix-blend-mode: multiply;
+}
+
 @media (min-width: 1000px) {
     #lp-container .lp-video {
         margin: 80px auto 80px auto;

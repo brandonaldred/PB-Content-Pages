@@ -1,0 +1,19 @@
+#lp-builder {
+    max-width: 800px;
+    margin: auto;
+}
+.lp-builder-div {
+    max-width: 40%;
+    display: inline-block;
+    padding: 20px;
+}
+
+.lp-builder-div:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.lp-builder-div img{
+    max-width: 100%;
+    mix-blend-mode: multiply;
+}
