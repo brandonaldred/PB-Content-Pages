@@ -423,6 +423,10 @@ hr {
         width: 45%;
     }
 
+    #lp-container .lp-full-width-info-image img {
+        max-width: 100%;
+    }
+
     #lp-container .lp-full-width-info-copy {
         width: 55%;
     }
@@ -527,6 +531,8 @@ hr {
         overflow: hidden;
         margin-top: 30px;
     }
+
+
 
     #lp-container .lp-full-width-info-image img {
         width: 100%;
