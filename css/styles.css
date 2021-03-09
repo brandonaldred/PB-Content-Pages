@@ -429,6 +429,7 @@ hr {
 
     #lp-container .lp-full-width-info-copy {
         width: 55%;
+        box-sizing: border-box;
     }
 
     #lp-container .lp-body-copy-image {
@@ -455,6 +456,12 @@ hr {
 
     #lp-container .lp-lead-in-copy h3{
         font-size: 4.5em;
+    }
+
+    #lp-container .lp-lead-in-image {
+        width: 100%;
+        height: 460px;
+        overflow: hidden;
     }
 }
 
