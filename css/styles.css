@@ -384,6 +384,7 @@ hr {
 
     #lp-container .lp-full-width-image {
         width: 100% !important;
+        height: 100%;
     }
 
     #lp-container .lp-full-width img {
