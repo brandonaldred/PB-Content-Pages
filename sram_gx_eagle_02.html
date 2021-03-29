@@ -1,0 +1,788 @@
+<style>
+
+
+/* UPDATED */
+/*@font-face {
+    font-family: 'Tungsten';
+    src: url('../fonts/Tungsten-Medium.woff2') format('woff2'), url('../fonts/Tungsten-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Univers LT Std';
+    src: url('../fonts/UniversLTStd-Cn.woff2') format('woff2'), url('../fonts/UniversLTStd-Cn.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+xmp {
+    font-size: 12px;
+    max-width: 1000px;
+    overflow-wrap: break-word;
+}
+
+hr {
+    margin: 30px;
+} */
+#lp-container {
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+    font-family: 'univers lt pro', sans-serif;
+}
+
+#lp-container p {
+    font-size: 1em;
+}
+
+#lp-container h3 {
+    font-family: 'Tungsten', 'Verdana', 'Arial', sans-serif !important;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #202024;
+}
+
+#lp-container .lp-body-copy-title {
+    font-size: 2.5em;
+    margin: 0 auto 15px auto;
+    max-width: 680px;
+    padding: 0 20px 0 20px;
+}
+
+#lp-container .lp-body-copy {
+    font-size: 1em !important;
+    line-height: 1.5em !important;
+    max-width: 680px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px 0 20px;
+}
+
+#lp-container .lp-full-width {
+    height: 490px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#lp-container .lp-full-width-image {
+    position: absolute;
+
+}
+
+#lp-container .lp-full-width h3 {
+    font-size: 3em;
+    color: white !important;
+}
+
+#lp-container .lp-full-width-copy {
+    color: white;
+    z-index: 999;
+}
+
+#lp-container .lp-full-width-copy h3 {
+    text-transform: uppercase;
+}
+
+#lp-container .lp-full-width-info-copy h3 {
+    font-size: 3em;
+}
+
+#lp-container .lp-small-copy {
+    font-size: 70%;
+    text-transform: lowercase;
+    display: inline-block;
+}
+
+#lp-container .lp-white-outline-button {
+    position: relative;
+    padding: 20px 50px 20px 50px;
+    border: 1px solid white;
+    color: white !important;
+    display: inline-block;
+    text-decoration: none !important;
+}
+
+#lp-container .lp-white-outline-button:hover {
+    color: white;
+}
+
+#lp-container .lp-full-width p {
+    margin: 15px 0 25px 0;
+}
+
+#lp-container .lp-half-width-product {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+#lp-container .lp-half-width-product-image {
+    max-width: 100%;
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+#lp-container .lp-half-width-product-copy {
+    width: 90%;
+}
+
+#lp-container .lp-half-width-product-copy h3 {
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+#lp-container .lp-half-width-product p {
+    margin: 20px 0 20px 0;
+}
+
+#lp-container .lp-half-width-product-copy a {
+    font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: .9em;
+    letter-spacing: .1em;
+}
+
+#lp-container .lp-half-width-product a:hover {
+    color: black;
+}
+
+#lp-container .lp-lead-in {
+    margin-bottom: 30px;
+}
+
+#lp-container .lp-lead-in-copy {
+    max-width: 680px;
+    padding: 0 40px 0 40px;
+    margin: 0 auto;
+    text-align: center;
+    
+}
+
+.lp-hero-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(117, 19, 93, 0));   
+}
+
+#lp-container .lp-lead-in-copy h3{
+    margin-bottom: 26px;
+}
+
+#lp-container .lp-lead-in-copy p {
+    font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
+    font-size: .9em !important;
+    color: #464647;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+#lp-container .lp-lead-in img {
+    max-width: 1000px;
+}
+
+#lp-container .lp-product {
+    margin-bottom: 30px;
+}
+
+#lp-container .lp-product-grid {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#lp-container .lp-product-head {
+    max-width: 680px;
+    margin: 50px auto 30px auto;
+    text-align: center;
+}
+
+#lp-container .lp-product-head h3 {
+    margin-bottom: 25px;
+    font-size: 2.5em;
+}
+
+#lp-container .lp-product-head a {
+    text-transform: uppercase;
+}
+
+#lp-container .lp-product-head a:hover {
+    color: black;
+}
+
+#lp-container .lp-product-grid .lp-half-width-product-image {
+    background-color: #FAFAFA;
+}
+
+#lp-container .lp-product-grid .lp-half-width-product-image img {
+    margin: auto;
+    mix-blend-mode: multiply;
+    max-height: 230px;
+    max-width: 300px;
+}
+
+#lp-container .lp-product-grid .lp-half-width-image img {
+    margin: auto;
+    mix-blend-mode: multiply;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#lp-container .lp-product-foot {
+    text-align: center;
+    height: 100px;
+}
+
+#lp-container .lp-product-foot a {
+    display: block;
+    background-color: #2D2D2E;
+    margin: auto;
+    color: white;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+#lp-container .lp-product-foot a:hover {
+    color: white;
+}
+
+#lp-container .lp-full-width-product .lp-half-width-product-copy p {
+    margin: 30px 0;
+}
+
+#lp-container .lp-full-width-info {
+    margin-bottom: 30px !important;
+}
+
+#lp-container .lp-full-width-info-copy p {
+    margin: 30px 0;
+    line-height: 1.5em;
+    width: 90%;
+}
+
+#lp-container .lp-full-width-info-copy a {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+#lp-container .lp-full-width-info-copy a:hover {
+    color: black;
+}
+
+#lp-container .lp-full-width-info-gray-outline-button {
+    position: relative;
+    padding: 15px 50px 11px 50px;
+    border: 1px solid #000000;
+    color: #000000 !important;
+    display: inline-block;
+    text-decoration: none !important;
+}
+
+#lp-container .lp-full-width-info-gray-outline-button:hover {
+    color: #000000;
+}
+
+#lp-container .lp-full-width-info-white-outline-button {
+    position: relative;
+    padding: 15px 50px 11px 50px;
+    border: 1px solid white;
+    color: white !important;
+    display: inline-block;
+    text-decoration: none !important;
+}
+
+#lp-container .lp-full-width-info-white-outline-button:hover {
+    color: white;
+}
+
+#lp-container .lp-full-width-info-dk-bg {
+    background-color: #323233;
+    color: white !important;
+}
+
+#lp-container .lp-full-width-info-dk-bg h3 {
+    color: white !important;
+}
+
+#lp-container .lp-full-width-info-dk-bg a {
+    color: white;
+}
+
+#lp-container .lp-full-width-info-dk-bg a:hover {
+    color: white;
+}
+
+#lp-container .lp-full-width-info-lt-bg {
+    background-color: #F5F5F7;
+    color: #000000;
+}
+
+#lp-container .lp-full-width-info-copy {
+    padding: 50px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
+
+#lp-container .lp-three-col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+#lp-container .lp-column img {
+    max-width: 313px;
+    max-height: 220px;
+}
+
+#lp-container .lp-column-title {
+    letter-spacing: .1em;
+    margin: 27px 0 18px 0;
+    text-transform: uppercase;
+}
+
+#lp-container .lp-video iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.lp-builder-div {
+    max-width: 450px;
+    display: inline-block;
+    padding: 20px;
+}
+
+.lp-builder-div:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.lp-builder-div img{
+    max-width: 450px;
+    mix-blend-mode: multiply;
+}
+
+@media (min-width: 1000px) {
+    #lp-container .lp-video {
+        margin: 80px auto 80px auto;
+        width: 680px;
+        height: 370px;
+    }
+
+    #lp-container .lp-full-width-copy {
+        width: 75%;
+        height: 150px;
+        margin-left: 60px;
+    }
+
+    #lp-container .lp-full-width-image {
+        width: 100% !important;
+        height: 100%;
+    }
+
+    #lp-container .lp-full-width img {
+        max-height: 100%;
+        width: 100% !important;
+    }
+
+    #lp-container .lp-half-width-product {
+        width: 483px;
+        display: inline-block;      
+    }
+
+    #lp-container .lp-half-width-product:nth-child(even) {
+        margin-left: 30px;
+    }
+
+    #lp-container .lp-half-width-product img {
+        width: 100%;
+    }
+    .lp-full-width-product {
+        display: flex;
+        width: 100%;
+    }
+
+    #lp-container .lp-full-width-product .lp-half-width-product-image {
+        width: 48%;
+    }
+
+    #lp-container .lp-full-width-product .lp-half-width-product-copy {
+        width: 48%;
+        margin: auto 0 auto 30px;
+    }
+
+    #lp-container .lp-product-foot a {
+        max-width: 515px;
+        padding: 30px 100px 30px 100px;
+    }
+    
+    #lp-container .lp-full-width-info {
+        display: flex;
+        height: 505px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #lp-container .lp-full-width-info-image {
+        width: 45%;
+    }
+
+    #lp-container .lp-full-width-info-image img {
+        max-width: 100%;
+    }
+
+    #lp-container .lp-full-width-info-copy {
+        width: 55%;
+        box-sizing: border-box;
+    }
+
+    #lp-container .lp-body-copy-image {
+        max-width: 313;
+        max-height: 238px;
+        float: left;
+        margin: 0 30px 30px 0px;
+    }
+    /* not currently used
+    .lp-body-copy-image-right {
+        width: 313;
+        height: 238px;
+        float: right;
+        margin: 0 0px 30px 30px;
+    } */
+
+    #lp-container .lp-column {
+        width: 313px;
+    }
+
+    #lp-container .lp-three-col {
+        width: 100%;
+    }
+
+    #lp-container .lp-lead-in-copy h3{
+        font-size: 4.5em;
+    }
+
+    #lp-container .lp-lead-in-image {
+        width: 100%;
+        height: 460px;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 999px) {
+    #lp-container .lp-full-width h3 {
+        font-size: 2em;
+    }
+
+    #lp-container .lp-full-width-info-copy h3 {
+        font-size: 2em;
+    }
+
+    #lp-container img{
+        text-align: center;
+    }
+
+    #lp-container .lp-full-width-image {
+        height: 100% !important;
+    }
+
+    #lp-container .lp-full-width img {
+        max-height: 100%;
+    }
+
+    #lp-container .lp-video {
+        margin: 80px auto 90px auto;
+        width: 90%;
+        height: 238px;
+    }
+
+    #lp-container .lp-full-width-copy {
+        width: 80%;
+        margin: auto;
+    }
+
+    #lp-container .lp-half-width-product {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .lp-half-width-product img {
+        width: 100%;
+    }
+
+    #lp-container .lp-product {
+        width: 90%;
+        margin: auto;
+    }
+
+    #lp-container .lp-product-foot a {
+        padding: 20px 20px;
+        width: 80%;
+    }
+
+    #lp-container .lp-full-width-product {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #lp-container .lp-full-width-product .lp-half-width-product-image {
+        margin-bottom: 30px;
+    }
+
+    #lp-container .lp-full-width-info {
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    #lp-container .lp-full-width-info-image {
+
+        overflow: hidden;
+        margin-top: 30px;
+    }
+
+
+
+    #lp-container .lp-full-width-info-image img {
+        width: 100%;
+        margin-top: -50px;
+    }
+
+    #lp-container .lp-body-copy-image {
+        max-width: 90%;
+        max-height: 238px;
+        display: block;
+        margin: 0 auto 30px auto;
+
+    }
+
+    #lp-container .lp-lead-in img {
+        margin: auto;
+        width: 100%;
+    }
+
+    #lp-container .lp-three-col {
+        width: 90%;
+        margin: 0 auto 50px auto;
+    }
+
+    #lp-container .lp-column {
+        width: 100%;
+        margin: 30px auto 30px auto;
+    }
+
+    #lp-container .lp-lead-in-copy h3{
+        font-size: 3.5em;
+    }
+}
+
+
+</style>
+
+<body>
+    <div id="lp-container">
+        
+           <div class="lp-lead-in">
+            <div class="lp-lead-in-copy">
+                <h3 style="margin-top: 60px;">GX EAGLE AXS <br /><span class="lp-small-copy">by</span> SRAM</h3>
+                <p>YOUR PARTNER FOR ALL RIDES, ALL THE TIME, ALL DAY.</p>
+            </div>
+               <a href="/sram-x01-eagle-axs-12speed-upgrade-kit-lunar-black-00.7918.099.000/p1224751"><img src="https://images.amain.com/images/contentpages/sram/Hero_Banner.jpg" /></a>
+        </div>
+                    <div class="lp-product-head">
+                <h3>SRAM GX EAGLE AXS</h3>
+                <a href="/sram-gx-eagle-axs-upgrade-kit-lunar-black-12-speed-00.7918.104.000/p1304268">Pre Order Now</a>
+            </div>
+        <div>
+            <p class="lp-body-copy">With proven AXS wireless technology, and the rugged durability of GX, it’s Eagle at its best. Featuring an expanded 520% range, seamless compatibility with the rest of the ecosystem, and the ability to customize with the AXS app, GX Eagle AXS is your entry point to the future.
+            </p>
+        </div>
+
+        
+
+                                            
+    <div class="lp-video">
+        <iframe src="https://www.youtube.com/embed/wO_-gyrAbK4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+        
+               <div class="lp-full-width-info">
+            <div class="lp-full-width-info-image"><img src="https://images.amain.com/images/contentpages/sram/complete.jpg" /></div>
+            <div class="lp-full-width-info-copy lp-full-width-info-lt-bg">
+                <h3>GX AXS UPGRADE KIT</h3>
+                <p>The day in, day out Eagle ecosystem hero is now available with AXS. New for 2021, The GX AXS upgrade kit is your entry point into wireless drivetrain simplicity. Compatible with any of our Eagle ecosystem cassettes and crank arms, the upgrade kit allows you to experience AXS without needing to buy an entire groupset provided you already are using Eagle products. No matter if you are looking to upgrade your ride, or looking for great value replacement parts, look no further than the GX AXS upgrade kit.</p>
+                <a href="/sram-gx-eagle-axs-upgrade-kit-lunar-black-12-speed-00.7918.104.000/p1304268">Pre Order GX AXS UPGRADE KIT</a>
+            </div>
+        </div>
+       
+        <div class="lp-product">
+
+            
+            
+                  <div class="lp-full-width-info">
+            <div class="lp-full-width-info-image"><img src="https://images.amain.com/images/contentpages/sram/sram_04.png" /></div>
+            <div class="lp-full-width-info-copy lp-full-width-info-lt-bg">
+                        <h3>GX EAGLE AXS DERAILLEUR</h3>
+                
+                <p style="margin:0 !important;">Riders want a derailleur that shifts on command, whether under climbing load or sprinting to the stage finish. The GX Eagle AXS derailleur gets it done with everything you have come to expect from our AXS connect components.</p>
+                
+                           <ul style="font-size: 16px; margin: 30px 0 !important; padding-left: 0; ">
+                            <li style="margin-left: 1rem;">AXS enabled componentry software that makes it possible to both program and personalize new SRAM and RockShox components with Eagle technology</li>
+                            <li style="margin-left: 1rem;">Overload Clutch protection</li>
+                            <li style="margin-left: 1rem;">Finished with the GX Eagle colorway</li>
+                            <li style="margin-left: 1rem;">Battery sold separately</li>
+                        </ul>
+          
+                        <a href="/sram-gx-eagle-axs-rear-derailleur-lunar-12-speed-long-cage-00.7518.151.000/p1304306?v=1304272">Pre Order The GX EAGLE AXS DERAILLEUR</a>
+            </div>
+        </div>
+        <div class="lp-full-width-info">
+            <div class="lp-full-width-info-image"><img src="https://images.amain.com/images/contentpages/sram/sram_05.png" /></div>
+            <div class="lp-full-width-info-copy">
+                         <h3>GX EAGLE AXS CONTROLLER</h3>
+                
+                                <p style="margin:0 !important;">Simplicity and performance made for all day adventures. The pure shifting performance of Eagle AXS is now available with GX. Shift under load, over the roughest terrain, uphill, without changing your grip on the bar.</p>
+                
+                <ul style="font-size: 16px; margin: 30px 0 !important;  padding-left: 0; ">
+                            <li style="margin-left: 1rem;">Compatible with MatchMaker X </li>
+                            <li style="margin-left: 1rem;">Eagle technology </li>
+                            <li style="margin-left: 1rem;">Customize in-board and outboard shift options </li>
+                            <li style="margin-left: 1rem;">Pairs with all derailleurs in the Eagle AXS ecosystem</li>
+                            <li style="margin-left: 1rem;">AXS enabled componentry software that makes it possible to both program and personalize new SRAM and RockShox components </li>
+                            <li style="margin-left: 1rem;">System is completely water and dust proof to IPX7</li>
+                        </ul>
+                        <a href="/sram-gx-eagle-axs-controller-black-right-only-discrete-clamp-00.3018.299.000/p1304269">Pre Order The GX EAGLE AXS CONTROLLER</a>
+            </div>
+        </div>
+            
+                              <div class="lp-full-width-info">
+            <div class="lp-full-width-info-image"><img src="https://images.amain.com/images/contentpages/sram/sram_06.png" /></div>
+            <div class="lp-full-width-info-copy lp-full-width-info-lt-bg">
+                <h3 style="width: 100%;">AXS BATTERY COVER</h3>
+                
+                    <p style="margin:0 !important;">The AXS battery cover is a light-weight cowling designed to protect the battery while installed on the derailleur and to ensure it stays safe and guarded from impacts. The AXS battery cover fits all AXS mountain bike derailleurs.</p>
+                
+                            <ul style="font-size: 16px; margin: 30px 0 !important;  padding-left: 0; width: 100%;">
+                            <li style="margin-left: 1rem;">Stylish </li>
+                            <li style="margin-left: 1rem;">Protective </li></ul>
+                          <a href="/sram-eagle-axs-rear-derailleur-battery-cover-black-00.7518.156.000/p1304267">Pre Order The AXS BATTERY COVER</a>
+            </div>
+        </div>
+            
+
+                         
+
+
+
+
+        
+        <!-------------------------------------------FAQ------------------------------------>
+ 
+        
+        
+            <h3 class="lp-body-copy-title" style="margin-top: 60px !important;">frequently asked questions &#58;</h3>
+            
+            
+            <p class="lp-body-copy"><strong>What are the main benefits and key features of GX Eagle AXS? </strong> </p>
+            <div class="lp-body-copy">
+            <ul style="font-size: 16px; margin-left: 0; padding-left: 0; ">
+            <li style="margin-left: 1rem;">Wireless electronic shifting with engineered hardware for a new ergonomic experience based on touching a button rather than pushing a lever.</li>
+            <li style="margin-left: 1rem;">Faster, more consistent shifts. Letting you shift when you want, under load, without ever having to plan around terrain.</li>
+            <li style="margin-left: 1rem;">Gathering useful data, telling you how many shifts have been made, how frequently each cog is being used, helping you make smarter choices on chainring size, and more.</li>
+            <li style="margin-left: 1rem;">Eagle is a complete drivetrain system that was developed to be an integrated high-performance ecosystem. The engineering and testing that went into the development provide for maximum performance, safety, and long-term durability to ensure a great consumer ride experience. We guarantee this performance when Eagle drivetrains are used as a complete ecosystem. </li>
+            </ul>
+ 
+            </div>
+            
+            
+            <p class="lp-body-copy"><strong>Can I fit SRAM GX Eagle AXS to any mountain bike and what are the compatibility requirements for GX Eagle AXS?</strong></p>
+            <div class="lp-body-copy">
+            <ul style="font-size: 16px; margin-left: 0; padding-left: 0; ">
+                     <li style="margin-left: 1rem;">All current bikes and frames compatible with Eagle today will be compatible with GX Eagle AXS. GX Eagle AXS requires an XD driver body for cassette installation, just like the majority of our current 1x drivetrains. GX Eagle AXS cranksets use SRAM DUB bottom brackets, compatible with almost all current BB standards.</li>
+            </ul>
+ 
+            </div>
+
+            <p class="lp-body-copy"><strong>How does SRAM GX Eagle AXS connect and integrate with other wireless components that SRAM makes?  </strong> </p>
+            <div class="lp-body-copy">
+                
+            <ul style="font-size: 16px; margin-left: 0; padding-left: 0; ">
+            <li style="margin-left: 1rem;">All AXS components can connect to one another using our proprietary encrypted wireless network. The AXS mobile app is used for personalization of the component controls and to serve as a single access point for all SRAM AXS connected products. Additional connectivity included with AXS is ANT+ and Bluetooth. </li>
+            </ul>
+ 
+            </div>
+            
+            
+            <p class="lp-body-copy"><strong>Does SRAM GX Eagle AXS have smartphone connectivity?</strong></p>
+            <div class="lp-body-copy">
+            <ul style="font-size: 16px; margin-left: 0; padding-left: 0; ">
+            <li style="margin-left: 1rem;">AXS components have Bluetooth connectivity through the SRAM AXS app. If there is a firmware update, it can be handled through the app. There is no dongle. </li>
+            </ul>
+ 
+            </div>
+            
+            
+            <p class="lp-body-copy"><strong>Can I assign different functions to the buttons (e.g. move the derailleur outboard with a left shifter click)?</strong></p>
+            <div class="lp-body-copy">
+            <ul style="font-size: 16px; margin-left: 0; padding-left: 0; ">
+            <li style="margin-left: 1rem;">Controller touchpoints are totally customizable to your preferences, allowing you to choose which paddle does what through the AXS App. Choose from three functions: Inboard shift. Outboard shift. Dropper. Yes, you can designate any of the touchpoints to control your electronic Reverb dropper seatpost. </li>
+            </ul>
+ 
+            </div>
+            
+            
+            <p class="lp-body-copy"><strong>How do I know if my battery is low? What are the charge levels and how many hours of riding can I expect to get on a full charge?</strong></p>
+            <div class="lp-body-copy">
+            <ul style="font-size: 16px; margin-left: 0; padding-left: 0; ">
+            <li style="margin-left: 1rem;">Checking battery life is easy: press the button on the shifter. Green light means it’s at or close to full charge. Red light means it’s at or close to half charge. And flashing red means charge it up. The battery will last approximately 20 hours or more of riding time. To prolong battery life, the system goes to power save mode when the bike is stationary. It is also possible to check battery life through the AXS App.</li>
+            </ul>
+            </div>
+                
+            <p class="lp-body-copy"><strong>How does SRAM GX Eagle AXS connect and integrate with other wireless components that SRAM makes? </strong> </p>
+            <div class="lp-body-copy">
+            <ul style="font-size: 16px; margin-left: 0; padding-left: 0; ">
+            <li style="margin-left: 1rem;">All AXS components can connect to one another using our proprietary encrypted wireless network. The AXS mobile app is used for personalization of the component controls and to serve as a single access point for all SRAM AXS connected products. </li>
+            </ul>
+ 
+            </div>
+            
+            <p class="lp-body-copy"><strong>Is SRAM AXS waterproof?</strong></p>
+            <div class="lp-body-copy">
+            <ul style="font-size: 16px; margin-left: 0; padding-left: 0; ">
+            <li style="margin-left: 1rem;">The GX Eagle AXS system is completely water and dust proof to the IPX7 international standard. For a mountain biker, it means no hesitation to head out when the weather looks less than ideal. When washing AXS components be sure to avoid direct high pressure washing, like other components on a bicycle there are many moving parts with lubrications that can be washed away with aggressive washing techniques.</li>
+            </ul>
+        
+                    </div>
+                
+            <p class="lp-body-copy"><strong>How many hours of riding can I get from a fully charged AXS derailleur battery? </strong> </p>
+            <div class="lp-body-copy">
+            <ul style="font-size: 16px; margin-left: 0; padding-left: 0; ">
+            <li style="margin-left: 1rem;">Approximately 20 hours of ride time or more. The battery weighs 25g and is detachable with a single clip. It’s also “hot swappable” if needed – from GX Eagle AXS derailleur to your Reverb AXS seatpost or even your SRAM RED or Force eTap AXS road group. And it only takes an hour to charge. </li>
+            </ul>
+ 
+            </div>
+
+
+
+        </div>
+        
+        
+    </div>
+    
+</body>
+
+
+
