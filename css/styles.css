@@ -1,5 +1,4 @@
- /* UPDATED */
-/*@font-face {
+@font-face {
     font-family: 'Tungsten';
     src: url('../fonts/Tungsten-Medium.woff2') format('woff2'), url('../fonts/Tungsten-Medium.woff') format('woff');
     font-weight: 500;
@@ -21,7 +20,7 @@ xmp {
 
 hr {
     margin: 30px;
-} */
+}
 #lp-container {
     margin: auto;
     width: 100%;
