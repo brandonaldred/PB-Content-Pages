@@ -1,0 +1,652 @@
+<style>
+    @font-face {
+        font-family: 'Tungsten';
+        src: url('../fonts/Tungsten-Medium.woff2') format('woff2'), url('../fonts/Tungsten-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Univers LT Std';
+        src: url('../fonts/UniversLTStd-Cn.woff2') format('woff2'), url('../fonts/UniversLTStd-Cn.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    xmp {
+        font-size: 12px;
+        max-width: 1000px;
+        overflow-wrap: break-word;
+    }
+
+    hr {
+        margin: 30px;
+    }
+
+    #lp-container {
+        margin: auto;
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    #lp-container p {
+        font-size: 1em;
+    }
+
+    #lp-container h3 {
+        font-family: 'Tungsten', Verdana, Arial, sans-serif !important;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: #202024;
+    }
+
+    #lp-container .lp-body-copy-title {
+        font-size: 2.5em;
+        margin: 0 auto 15px auto;
+        max-width: 680px;
+        padding: 0 20px 0 20px;
+    }
+
+    #lp-container .lp-body-copy {
+        font-size: 1em !important;
+        line-height: 1.5em !important;
+        max-width: 680px;
+        margin: 0 auto 30px auto;
+        padding: 0 20px 0 20px;
+    }
+
+    #lp-container .lp-full-width {
+        height: 490px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    #lp-container .lp-full-width-image {
+        position: absolute;
+
+    }
+
+    #lp-container .lp-full-width h3 {
+        font-size: 3em;
+        color: white !important;
+    }
+
+    #lp-container .lp-full-width-copy {
+        color: white;
+        z-index: 999;
+    }
+
+    #lp-container .lp-full-width-copy h3 {
+        text-transform: uppercase;
+    }
+
+    #lp-container .lp-full-width-info-copy h3 {
+        font-size: 3em;
+    }
+
+    #lp-container .lp-small-copy {
+        font-size: 70%;
+        text-transform: lowercase;
+        display: inline-block;
+    }
+
+    #lp-container .lp-white-outline-button {
+        position: relative;
+        padding: 20px 50px 20px 50px;
+        border: 1px solid white;
+        color: white !important;
+        display: inline-block;
+        text-decoration: none !important;
+    }
+
+    #lp-container .lp-white-outline-button:hover {
+        color: white;
+    }
+
+    #lp-container .lp-full-width p {
+        margin: 15px 0 25px 0;
+    }
+
+    #lp-container .lp-half-width-product {
+        position: relative;
+        margin-bottom: 28px;
+    }
+
+    #lp-container .lp-half-width-product-image {
+        max-width: 100%;
+        height: 220px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
+
+    #lp-container .lp-half-width-product-copy {
+        width: 90%;
+    }
+
+    #lp-container .lp-half-width-product-copy h3 {
+        margin-top: 25px;
+        text-transform: uppercase;
+        font-size: 2em;
+    }
+
+    #lp-container .lp-half-width-product p {
+        margin: 20px 0 20px 0;
+    }
+
+    #lp-container .lp-half-width-product-copy a {
+        font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
+        text-transform: uppercase;
+        font-size: .9em;
+        letter-spacing: .1em;
+    }
+
+    #lp-container .lp-half-width-product a:hover {
+        color: black;
+    }
+
+    #lp-container .lp-lead-in {
+        margin-bottom: 30px;
+    }
+
+    #lp-container .lp-lead-in-copy {
+        max-width: 680px;
+        padding: 0 40px 0 40px;
+        margin: 0 auto;
+        text-align: center;
+
+    }
+
+    .lp-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(117, 19, 93, 0));
+    }
+
+    #lp-container .lp-lead-in-copy h3 {
+        margin-bottom: 26px;
+    }
+
+    #lp-container .lp-lead-in-copy p {
+        font-family: 'Univers LT Std', Verdana, Arial, sans-serif;
+        font-size: .9em !important;
+        color: #464647;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+    }
+
+    #lp-container .lp-lead-in img {
+        max-width: 1000px;
+    }
+
+    #lp-container .lp-product {
+        margin-bottom: 30px;
+    }
+
+    #lp-container .lp-product-grid {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #lp-container .lp-product-head {
+        max-width: 680px;
+        margin: 50px auto 30px auto;
+        text-align: center;
+    }
+
+    #lp-container .lp-product-head h3 {
+        margin-bottom: 25px;
+        font-size: 2.5em;
+    }
+
+    #lp-container .lp-product-head a {
+        text-transform: uppercase;
+    }
+
+    #lp-container .lp-product-head a:hover {
+        color: black;
+    }
+
+    #lp-container .lp-product-grid .lp-half-width-product-image {
+        background-color: #FAFAFA;
+    }
+
+    #lp-container .lp-product-grid .lp-half-width-product-image img {
+        margin: auto;
+        mix-blend-mode: multiply;
+        max-height: 230px;
+        max-width: 300px;
+    }
+
+    #lp-container .lp-product-grid .lp-half-width-image img {
+        margin: auto;
+        mix-blend-mode: multiply;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    #lp-container .lp-product-foot {
+        text-align: center;
+        height: 100px;
+    }
+
+    #lp-container .lp-product-foot a {
+        display: block;
+        background-color: #2D2D2E;
+        margin: auto;
+        color: white;
+        text-decoration: none;
+        box-sizing: border-box;
+        text-transform: uppercase;
+    }
+
+    #lp-container .lp-product-foot a:hover {
+        color: white;
+    }
+
+    #lp-container .lp-full-width-product .lp-half-width-product-copy p {
+        margin: 30px 0;
+    }
+
+    #lp-container .lp-full-width-info {
+        margin-bottom: 30px !important;
+    }
+
+    #lp-container .lp-full-width-info-copy p {
+        margin: 30px 0;
+        line-height: 1.5em;
+        width: 90%;
+    }
+
+    #lp-container .lp-full-width-info-copy a {
+        text-transform: uppercase;
+        letter-spacing: .1em;
+    }
+
+    #lp-container .lp-full-width-info-copy a:hover {
+        color: black;
+    }
+
+    #lp-container .lp-full-width-info-gray-outline-button {
+        position: relative;
+        padding: 15px 50px 11px 50px;
+        border: 1px solid #000000;
+        color: #000000 !important;
+        display: inline-block;
+        text-decoration: none !important;
+    }
+
+    #lp-container .lp-full-width-info-gray-outline-button:hover {
+        color: #000000;
+    }
+
+    #lp-container .lp-full-width-info-white-outline-button {
+        position: relative;
+        padding: 15px 50px 11px 50px;
+        border: 1px solid white;
+        color: white !important;
+        display: inline-block;
+        text-decoration: none !important;
+    }
+
+    #lp-container .lp-full-width-info-white-outline-button:hover {
+        color: white;
+    }
+
+    #lp-container .lp-full-width-info-dk-bg {
+        background-color: #323233;
+        color: white !important;
+    }
+
+    #lp-container .lp-full-width-info-dk-bg h3 {
+        color: white !important;
+    }
+
+    #lp-container .lp-full-width-info-dk-bg a {
+        color: white;
+    }
+
+    #lp-container .lp-full-width-info-dk-bg a:hover {
+        color: white;
+    }
+
+    #lp-container .lp-full-width-info-lt-bg {
+        background-color: #F5F5F7;
+        color: #000000;
+    }
+
+    #lp-container .lp-full-width-info-copy {
+        padding: 50px 30px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+
+    }
+
+    #lp-container .lp-three-col {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 80px;
+    }
+
+    #lp-container .lp-column img {
+        max-width: 313px;
+        max-height: 220px;
+    }
+
+    #lp-container .lp-column-title {
+        letter-spacing: .1em;
+        margin: 27px 0 18px 0;
+        text-transform: uppercase;
+    }
+
+    #lp-container .lp-video iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .lp-builder-div {
+        max-width: 450px;
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .lp-builder-div:hover {
+        background-color: lightgray;
+        cursor: pointer;
+    }
+
+    .lp-builder-div img {
+        max-width: 450px;
+        mix-blend-mode: multiply;
+    }
+
+    @media (min-width: 1000px) {
+        #lp-container .lp-video {
+            margin: 80px auto 80px auto;
+            width: 680px;
+            height: 370px;
+        }
+
+        #lp-container .lp-full-width-copy {
+            width: 75%;
+            height: 150px;
+            margin-left: 60px;
+        }
+
+        #lp-container .lp-full-width-image {
+            width: 100% !important;
+            height: 100%;
+        }
+
+        #lp-container .lp-full-width img {
+            max-height: 100%;
+            width: 100% !important;
+        }
+
+        #lp-container .lp-half-width-product {
+            width: 483px;
+            display: inline-block;
+        }
+
+        #lp-container .lp-half-width-product:nth-child(even) {
+            margin-left: 30px;
+        }
+
+        #lp-container .lp-half-width-product img {
+            width: 100%;
+        }
+
+        .lp-full-width-product {
+            display: flex;
+            width: 100%;
+        }
+
+        #lp-container .lp-full-width-product .lp-half-width-product-image {
+            width: 48%;
+        }
+
+        #lp-container .lp-full-width-product .lp-half-width-product-copy {
+            width: 48%;
+            margin: auto 0 auto 30px;
+        }
+
+        #lp-container .lp-product-foot a {
+            max-width: 515px;
+            padding: 30px 100px 30px 100px;
+        }
+
+        #lp-container .lp-full-width-info {
+            display: flex;
+            height: 505px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #lp-container .lp-full-width-info-image {
+            width: 45%;
+        }
+
+        #lp-container .lp-full-width-info-image img {
+            max-width: 100%;
+        }
+
+        #lp-container .lp-full-width-info-copy {
+            width: 55%;
+            box-sizing: border-box;
+        }
+
+        #lp-container .lp-body-copy-image {
+            max-width: 313;
+            max-height: 238px;
+            float: left;
+            margin: 0 30px 30px 0px;
+        }
+
+        /* not currently used
+    .lp-body-copy-image-right {
+        width: 313;
+        height: 238px;
+        float: right;
+        margin: 0 0px 30px 30px;
+    } */
+
+        #lp-container .lp-column {
+            width: 313px;
+        }
+
+        #lp-container .lp-three-col {
+            width: 100%;
+        }
+
+        #lp-container .lp-lead-in-copy h3 {
+            font-size: 4.5em;
+        }
+
+        #lp-container .lp-lead-in-image {
+            width: 100%;
+            height: 460px;
+            overflow: hidden;
+        }
+    }
+
+    @media (max-width: 999px) {
+        #lp-container .lp-full-width h3 {
+            font-size: 2em;
+        }
+
+        #lp-container .lp-full-width-info-copy h3 {
+            font-size: 2em;
+        }
+
+        #lp-container img {
+            text-align: center;
+        }
+
+        #lp-container .lp-full-width-image {
+            height: 100% !important;
+        }
+
+        #lp-container .lp-full-width img {
+            max-height: 100%;
+        }
+
+        #lp-container .lp-video {
+            margin: 80px auto 90px auto;
+            width: 90%;
+            height: 238px;
+        }
+
+        #lp-container .lp-full-width-copy {
+            width: 80%;
+            margin: auto;
+        }
+
+        #lp-container .lp-half-width-product {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .lp-half-width-product img {
+            width: 100%;
+        }
+
+        #lp-container .lp-product {
+            width: 90%;
+            margin: auto;
+        }
+
+        #lp-container .lp-product-foot a {
+            padding: 20px 20px;
+            width: 80%;
+        }
+
+        #lp-container .lp-full-width-product {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #lp-container .lp-full-width-product .lp-half-width-product-image {
+            margin-bottom: 30px;
+        }
+
+        #lp-container .lp-full-width-info {
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        #lp-container .lp-full-width-info-image {
+            max-height: 300px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+
+
+        #lp-container .lp-full-width-info-image img {
+            width: 100%;
+            margin-top: -50px;
+        }
+
+        #lp-container .lp-body-copy-image {
+            max-width: 90%;
+            max-height: 238px;
+            display: block;
+            margin: 0 auto 30px auto;
+
+        }
+
+        #lp-container .lp-lead-in img {
+            margin: auto;
+            width: 100%;
+        }
+
+        #lp-container .lp-three-col {
+            width: 90%;
+            margin: 0 auto 50px auto;
+        }
+
+        #lp-container .lp-column {
+            width: 100%;
+            margin: 30px auto 30px auto;
+        }
+
+        #lp-container .lp-lead-in-copy h3 {
+            font-size: 3.5em;
+        }
+    }
+</style>
+<div id="lp-container">
+    <div class="lp-lead-in">
+        <div class="lp-lead-in-copy">
+            <h3>CRISP, CLEAN, &amp; WOOL</h3>
+            <p>Perfect for regulating body temp, keeping you dry and sweat free all while being soft and comfortable!
+            </p>
+        </div>
+        <img src="https://images.amain.com/images/sites/performancebike/contentPages/socks/Hero_02.jpg" />
+    </div>
+    <div>
+        <p class="lp-body-copy">You may be wondering, why wool?</p>
+        <h3 class="lp-body-copy-title">Regulates body temp</h3>
+        <p class="lp-body-copy">Merino wool cycling socks keep you warm on the cold days and transports sweat away from
+            the skin helping to keep you cool and dry on the hot ones.</p>
+        <h3 class="lp-body-copy-title">Keeps you dry & sweat-free</h3>
+        <p class="lp-body-copy">Merino wool cycling socks will transport sweat away from the skin as a vapor, so it
+            never allows your socks to get wet and clammy. Keeping you cool on those hotter days or dry and warm
+            during
+            the colder rides.</p>
+        <h3 class="lp-body-copy-title">Soft & Comfortable</h3>
+        <p class="lp-body-copy">Merino wool cycling socks are super fine and soft. It's able to bend much better,
+            unlike
+            traditional wool that is prickly by its nature. Merino wool is actually really soft!</p>
+        <h3 class="lp-body-copy-title">Never stinks!</h3>
+        <p class="lp-body-copy">Merino wool cycling socks will trap the smell of odors, so you can wear merino wool
+            for
+            longer without having to worry about the smell.</p>
+    </div>
+    <div class="lp-product">
+        <div class="lp-product-head">
+            <h3>Popular Sock Brands</h3>
+            <a href="/search?s=merino+socks">Shop Merino Wool Socks Now</a>
+        </div>
+        <div class="lp-three-col">
+            <div class="lp-column"><a href="/socks-accessories-clothing/c16984?fk=61_9225&fb=3208&lg=fb"><img
+                        src="https://images.amain.com/images/sites/performancebike/contentPages/socks/castelli.png" />
+                    <p>Castelli merino wool socks supply comfort and performance combined with a
+                        simple-yet-elegant
+                        patterns.</p>
+                </a>
+            </div>
+            <div class="lp-column"><a href="/socks-accessories-clothing/c16984?fk=61_9225&fb=1368&lg=fb"><img
+                        src="https://images.amain.com/images/sites/performancebike/contentPages/socks/Pearl_izumi.png" />
+                    <p>Pearl Izumi offers an amazing balance of technology,
+                        all-day comfort and durability.</p>
+                </a>
+            </div>
+            <div class="lp-column"><a href="/socks-accessories-clothing/c16984?fk=61_9225&fb=1874&lg=fb"><img
+                        src="https://images.amain.com/images/sites/performancebike/contentPages/socks/Swiftwick.png" />
+                    <p>A combination of high-performance fibers with moisture-wicking technology to keep your
+                        feet
+                        dry and cool.</p>
+                </a>
+            </div>
+        </div>
+        <div class="lp-product-foot">
+            <a href="/search?s=merino+socks">Shop All Merino Wool Socks</a>
+        </div>
+    </div>
+</div>
