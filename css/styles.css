@@ -25,6 +25,7 @@ hr {
     margin: auto;
     width: 100%;
     max-width: 1000px;
+    word-wrap: break-word;
 }
 
 #lp-container p {
