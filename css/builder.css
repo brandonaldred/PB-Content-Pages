@@ -1,66 +1,22 @@
-#lp-builder-modal * {
-    all: initial;
-}
 
-#lp-builder-modal {
-    width: 100vw;
+#lp-builder {
+    all: initial;
+    width: 30%;
     height: 100vh;
+    background: lightgray;
+    overflow:scroll;
+    color: white;
     position: fixed;
-    z-index: 9999;
-    background: rgb(0,0,0,0.8);
     top: 0;
     left: 0;
+    font-family: sans-serif;
+}
+#build {
+    width: 70%;
+    left: 30%;
+    position: absolute;
+}
+#container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-} 
-
-#lp-builder-modal-content {
-    color: #464647;
-    text-align: left;
-    width: 600px;
-    padding: 50px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background:white ;
-    box-shadow: 0px 0px 5px black;
-    box-sizing: border-box;
-}
-
-#lp-builder-modal-content .lp-builder-input {
-    width: 80%;
-    height: 30px;
-    margin-bottom: 40px;
-    border: 1px solid #C8C8C8;
-    border-top: 1px solid #00000029;
-    box-shadow: 0 3px 3px #C8C8C8;
-    border-radius: 3px;
-    background: #fdfdfd;
-}
-
-#lp-builder-modal-content textarea {
-    width: 80%;
-    margin-bottom: 30px;
-    resize: vertical;
-}
-
-#lp-builder-modal-content label { 
-    text-align: left;
-    margin-top: 30px;
-}
-
-#lp-builder-modal-content a {
-    background: black;
-    color: white;
-    padding: 20px 80px;
-    margin-top: 140px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-#lp-builder-modal-content a:hover {
-    background: black;
+    align-items: flex-start;
 }

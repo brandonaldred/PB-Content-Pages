@@ -1,24 +1,29 @@
-const builder = document.getElementById('lp-builder');
-const builderModal = document.getElementById('lp-builder-modal');
-builder.addEventListener('click', (e) => {
-    console.log(e.target.id);
-    if(e.target.id === 'lp-builder-modal') {
-        builderModal.style.display = 'none';
+class LeadIn {
+    constructor(header,subheader) {
+        this.header = header;
+        this.subheader = subheader;
     }
-    if(e.target.tagName === 'P') {
-        console.log('P Tag');
+    build() {
+        const leadIn = document.createElement('DIV');
+        leadIn.className = 'lp-lead-in';
+        const leadInCopy = document.createElement('DIV');
+        leadInCopy.className = 'lp-lead-in-copy';
+        const h3 = document.createElement('H3');
+        h3.innerText = this.header;
+        const p = document.createElement('p');
+        p.innerText = this.subheader;
+
+        leadInCopy.appendChild(h3);
+        leadInCopy.appendChild(p);
+        leadIn.appendChild(leadInCopy);
+        document.getElementById('lp-container').appendChild(leadIn);
     }
-    if(e.target.tagName === 'H3') {
-        console.log('H3 Tag');
-    }
-    if(e.target.tagName === 'A') {
-        e.preventDefault();
-        console.log('A Tag');
-    }
-    if(e.target.tagName === 'IMG') {
-        console.log('IMG Tag');
-    }
-    if(e.target.className === 'lp-hero-overlay') {
-        console.log(e.target.nextElementSibling.src)
-    }
-});
+}
+
+let head = 'Welcome to SBC.x'
+let subHead = 'A look at specialized Bicycles innovation and information about their equipment & technology'
+
+
+pageLeadIn = new LeadIn(head,subHead);
+let page = document.getElementById('lp-container');
+pageLeadIn.build();
