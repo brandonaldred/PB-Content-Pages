@@ -5,12 +5,30 @@
     height: 100vh;
     background: lightgray;
     overflow:scroll;
-    color: white;
+    color: black;
     position: fixed;
     top: 0;
     left: 0;
     font-family: sans-serif;
+    padding: 30px;
+    box-sizing: border-box;
 }
+
+
+
+#lp-builder select {
+    box-sizing: border-box;
+}
+
+
+#lp-builder input::before {
+    all: initial;
+}
+
+#lp-builder input::after {
+    all: initial;
+}
+
 #build {
     width: 70%;
     left: 30%;
