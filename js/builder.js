@@ -16,8 +16,8 @@ const build = {
     leadIn: (object) => {
         const leadIn = builder('DIV', [{ atr: 'className', val: 'lp-lead-in' }]);
         const leadInCopy = builder('DIV', [{ atr: 'className', val: 'lp-lead-in-copy' }]);
-        const h3 = builder('H3', [{ atr: 'innerText', val: object.h3 }]);
-        const p = builder('P', [{ atr: 'innerText', val: object.p }]);
+        const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
+        const p = builder('P', [{ atr: 'innerHTML', val: object.p }]);
         leadInCopy.appendChild(h3);
         leadInCopy.appendChild(p);
         leadIn.appendChild(leadInCopy);
@@ -37,8 +37,8 @@ const build = {
 
         //Create copy container
         const copyDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width-copy' }]);
-        const h3 = builder('H3', [{ atr: 'innerText', val: object.h3 }]);
-        const p = builder('P', [{ atr: 'innerText', val: object.p }]);
+        const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
+        const p = builder('P', [{ atr: 'innerHTML', val: object.p }]);
         const a = builder('A', [{ atr: 'innerText', val: object.aText }, { atr: 'src', val: object.link }, { atr: 'className', val: 'lp-full-width-info-white-outline-button' }]);
         copyDiv.appendChild(h3);
         copyDiv.appendChild(p);
@@ -60,8 +60,8 @@ const build = {
         if (object.opt === 'lt') {
             copyDiv.classList.add('lp-full-width-info-lt-bg');
         }
-        const h3 = builder('H3', [{ atr: 'innerText', val: object.h3 }]);
-        const p = builder('p', [{ atr: 'innerText', val: object.p }]);
+        const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
+        const p = builder('p', [{ atr: 'innerHTML', val: object.p }]);
         const a = builder('A', [{ atr: 'innerText', val: object.aText }, { atr: 'href', val: object.link } ]);
 
         imgDiv.appendChild(img);
@@ -79,10 +79,10 @@ const build = {
             mainDiv.appendChild(img);
         }
         if (object.h3) {
-            const h3 = builder('H3', [{ atr: 'className', val: 'lp-body-copy-title' }, { atr: 'innerText', val: object.h3 }]);
+            const h3 = builder('H3', [{ atr: 'className', val: 'lp-body-copy-title' }, { atr: 'innerHTML', val: object.h3 }]);
             mainDiv.appendChild(h3);
         }
-        const p = builder('P', [{ atr: 'className', val: 'lp-body-copy' }, { atr: 'innerText', val: object.p }]);
+        const p = builder('P', [{ atr: 'className', val: 'lp-body-copy' }, { atr: 'innerHTML', val: object.p }]);
         mainDiv.appendChild(p);
         object.built = mainDiv;
     },
@@ -96,7 +96,7 @@ const build = {
         const mainDiv = document.createElement('DIV');
         if (object.header) {
             const headerDiv = builder('DIV', [{ atr: 'className', val: 'lp-product-head' }]);
-            const h3 = builder('H3', [{ atr: 'innerText', val: object.h3 }]);
+            const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
             headerDiv.appendChild(h3);
             if (object.link) {
                 const a = builder('A', [{ atr: 'href', val: object.link }, { atr: 'innerText', val: object.aText}]);
@@ -109,7 +109,7 @@ const build = {
             const column = builder('DIV', [{ atr: 'className', val: 'lp-column' }]);
             const img = builder('IMG', [{ atr: 'src', val: object.subItems[i].img}]);
             const title = builder('P', [{ atr: 'className', val: 'lp-column-title' }, { atr: 'src', val: object.subItems[i].h3}]);
-            const p = builder('P', [{ atr: 'innerText', val: object.subItems[i].p}]);
+            const p = builder('P', [{ atr: 'innerHTML', val: object.subItems[i].p}]);
             column.appendChild(img);
             column.appendChild(title);
             column.appendChild(p);
@@ -126,26 +126,23 @@ let threeColumn = {
     type: 'threeCol',
     header: true,
     h3: 'Popular Angi-Integrated Helmets',
-    link: '',
-    aText: 'Shop All ANGi-Integrated Helmets',
+    link: 'link',
+    aText: 'Shop This LInk',
     subItems: [
         {
             img: 'img/angi2.jpg',
             h3: 'Protection Before',
-            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride
-            and, if you choose, to follow your ride in real time.`
+            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride and, if you choose, to follow your ride in real time.`
         },
         {
             img: 'img/angi2.jpg',
             h3: 'Protection Before',
-            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride
-            and, if you choose, to follow your ride in real time.`
+            p: `asdfasdfaANGi is a ride tracker. ANGi lets your emergency contacts<br /> know you’re heading out for a ride and, if you choose, to follow your ride in real time.`
         },
         {
             img: 'img/angi2.jpg',
             h3: 'Protection Before',
-            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride
-            and, if you choose, to follow your ride in real time.`
+            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride and, if you choose, to follow your ride in real time.`
         },
     ],
     built: ''
