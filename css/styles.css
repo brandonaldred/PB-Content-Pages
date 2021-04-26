@@ -222,7 +222,7 @@ hr {
     margin: auto;
     mix-blend-mode: multiply;
     max-height: 230px;
-    max-width: 300px;
+    width: auto;
 }
 
 #lp-container .lp-product-grid .lp-half-width-image img {

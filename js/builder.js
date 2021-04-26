@@ -1,126 +1,169 @@
-class LeadIn {
-    constructor(header, subheader) {
-        this.header = header;
-        this.subheader = subheader;
-    }
-    build() {
-        const leadIn = document.createElement('DIV');
-        leadIn.className = 'lp-lead-in';
-        const leadInCopy = document.createElement('DIV');
-        leadInCopy.className = 'lp-lead-in-copy';
-        const h3 = document.createElement('H3');
-        h3.innerText = this.header;
-        const p = document.createElement('p');
-        p.innerText = this.subheader;
-
-        leadInCopy.appendChild(h3);
-        leadInCopy.appendChild(p);
-        leadIn.appendChild(leadInCopy);
-        document.getElementById('lp-container').appendChild(leadIn);
-    }
-}
-
-class JumpOff {
-    constructor(h3, p, aSrc, aText, img, overlay) {
+class Component {
+    constructor(type, h3, p, link, aText, img, overlay,opt) {
+        this.type = type;
         this.h3 = h3;
         this.p = p;
-        this.aSrc = aSrc;
+        this.link = link;
         this.aText = aText;
         this.img = img;
         this.overlay = overlay;
+        this.opt = opt;
+        this.built = '';
     }
-    fullWidthBuild() {
-        const mainDiv = document.createElement('DIV');
-        mainDiv.className = 'lp-full-width';
-        //Create image container & image
-        const imgDiv = document.createElement('DIV');
-        imgDiv.className = 'lp-full-width-image';
+}
 
-        if (this.overlay) {
-            const dkOverlay = document.createElement('DIV');
-            dkOverlay.className = 'lp-hero-overlay';
+const build = {
+    leadIn: (object) => {
+        const leadIn = builder('DIV', [{ atr: 'className', val: 'lp-lead-in' }]);
+        const leadInCopy = builder('DIV', [{ atr: 'className', val: 'lp-lead-in-copy' }]);
+        const h3 = builder('H3', [{ atr: 'innerText', val: object.h3 }]);
+        const p = builder('P', [{ atr: 'innerText', val: object.p }]);
+        leadInCopy.appendChild(h3);
+        leadInCopy.appendChild(p);
+        leadIn.appendChild(leadInCopy);
+        object.built = leadIn;
+    },
+    fullWidthHero: (object) => {
+        const mainDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width' }]);
+        //Create image container & image
+        const imgDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width-image' }]);
+        if (object.overlay) {
+            const dkOverlay = builder('DIV', [{ atr: 'className', val: 'lp-hero-overlay' }]);
             imgDiv.appendChild(dkOverlay);
         }
-
-        const image = document.createElement('IMG');
-        image.src = this.img
+        const image = builder('IMG', [{ atr: 'src', val: object.img }]);
         image.style.all = 'unset';
         imgDiv.appendChild(image);
 
         //Create copy container
-        const copyDiv = document.createElement('DIV');
-        copyDiv.className = 'lp-full-width-copy';
-        const h3 = document.createElement('H3');
-        h3.innerText = this.h3;
-        const p = document.createElement('P');
-        p.innerText = this.p;
-        const a = document.createElement('A');
-        a.className = 'lp-full-width-info-white-outline-button';
-        a.src = this.aSrc;
-        a.innerText = this.aText;
+        const copyDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width-copy' }]);
+        const h3 = builder('H3', [{ atr: 'innerText', val: object.h3 }]);
+        const p = builder('P', [{ atr: 'innerText', val: object.p }]);
+        const a = builder('A', [{ atr: 'innerText', val: object.aText }, { atr: 'src', val: object.link }, { atr: 'className', val: 'lp-full-width-info-white-outline-button' }]);
         copyDiv.appendChild(h3);
         copyDiv.appendChild(p);
         copyDiv.appendChild(a);
-
         //Putting it all together.
         mainDiv.appendChild(imgDiv);
         mainDiv.appendChild(copyDiv);
-        document.getElementById('lp-container').appendChild(mainDiv);
-    }
-    halfWidthBuild(imageType) {
-        const productGrid = document.createElement('DIV');
-        productGrid.className = 'lp-product-grid';
-        const halfWidthItem= document.createElement('DIV');
-        halfWidthItem.className = 'lp-half-width-product';
-        const halfWidthImage = document.createElement('DIV');
-        if (imageType === 'product') {
-            halfWidthImage.className = 'lp-half-width-product-image';
-        } else {
-            halfWidthImage.className = 'lp-half-width-image';
+        object.built = mainDiv;
+    },
+    fullWidthInfo: (object) => {
+        const mainDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width-info' }]);
+        const imgDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width-info-image' }]);
+        const img = builder('IMG', [{ atr: 'src', val: object.img }]);
+        const copyDiv = builder('DIV',[{ atr: 'className', val: 'lp-full-width-info-copy' }]);
+        if (object.opt === 'dk') {
+            copyDiv.classList.add('lp-full-width-info-dk-bg');
+            console.log('dark');
         }
+        if (object.opt === 'lt') {
+            copyDiv.classList.add('lp-full-width-info-lt-bg');
+        }
+        const h3 = builder('H3', [{ atr: 'innerText', val: object.h3 }]);
+        const p = builder('p', [{ atr: 'innerText', val: object.p }]);
+        const a = builder('A', [{ atr: 'innerText', val: object.aText }, { atr: 'href', val: object.link } ]);
 
-        const image = document.createElement('IMG');
-        image.src = this.img;
-        halfWidthImage.appendChild(image);
-
-        const halfWidthCopy = document.createElement('DIV');
-        halfWidthCopy.className = 'lp-half-width-product-copy';
-        const h3 = document.createElement('H3');
-        h3.innerText = this.h3;
-        const p = document.createElement('P');
-        p.innerText = this.p;
-        const a = document.createElement('A');
-        a.src = this.aSrc;
-        a.innerText = this.aText;
-
-        halfWidthCopy.appendChild(h3);
-        halfWidthCopy.appendChild(p);
-        halfWidthCopy.appendChild(a);
-
-        halfWidthItem.appendChild(halfWidthImage);
-        halfWidthItem.appendChild(halfWidthCopy);
-        productGrid.appendChild(halfWidthItem);
-        productGrid.appendChild(halfWidthItem);
-        return productGrid;
+        imgDiv.appendChild(img);
+        mainDiv.appendChild(imgDiv);
+        copyDiv.appendChild(h3);
+        copyDiv.appendChild(p);
+        copyDiv.appendChild(a);
+        mainDiv.appendChild(copyDiv);
+        object.built = mainDiv;
+    },
+    paragraph: (object) => {
+        const mainDiv = document.createElement('DIV');
+        if (object.img) {
+            const img = builder('IMG', [{ atr: 'className', val: 'lp-body-copy-image' }, { atr: 'src', val: 'img/angihelmets.jpg'}]);
+            mainDiv.appendChild(img);
+        }
+        if (object.h3) {
+            const h3 = builder('H3', [{ atr: 'className', val: 'lp-body-copy-title' }, { atr: 'innerText', val: object.h3 }]);
+            mainDiv.appendChild(h3);
+        }
+        const p = builder('P', [{ atr: 'className', val: 'lp-body-copy' }, { atr: 'innerText', val: object.p }]);
+        mainDiv.appendChild(p);
+        object.built = mainDiv;
+    },
+    video: (object) => {
+        const mainDiv = builder('DIV',[{ atr: 'className', val: 'lp-video' }]);
+        const iframe = builder('IFRAME', [{ atr: 'src', val: object.link }, { atr: 'frameBorder', val: '0' }, { atr: 'allow', val: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' }]);
+        mainDiv.appendChild(iframe);
+        object.built = mainDiv;
+    },
+    threeCol: (object) => {
+        const mainDiv = document.createElement('DIV');
+        if (object.header) {
+            const headerDiv = builder('DIV', [{ atr: 'className', val: 'lp-product-head' }]);
+            const h3 = builder('H3', [{ atr: 'innerText', val: object.h3 }]);
+            headerDiv.appendChild(h3);
+            if (object.link) {
+                const a = builder('A', [{ atr: 'href', val: object.link }, { atr: 'innerText', val: object.aText}]);
+                headerDiv.appendChild(a);
+            }
+            mainDiv.appendChild(headerDiv);
+        }
+        const columnContainer = builder('DIV', [{ atr: 'className', val: 'lp-three-col' }]);
+        for (let i = 0; i < object.subItems.length; i++) {
+            const column = builder('DIV', [{ atr: 'className', val: 'lp-column' }]);
+            const img = builder('IMG', [{ atr: 'src', val: object.subItems[i].img}]);
+            const title = builder('P', [{ atr: 'className', val: 'lp-column-title' }, { atr: 'src', val: object.subItems[i].h3}]);
+            const p = builder('P', [{ atr: 'innerText', val: object.subItems[i].p}]);
+            column.appendChild(img);
+            column.appendChild(title);
+            column.appendChild(p);
+            columnContainer.appendChild(column);
+        }
+        mainDiv.appendChild(columnContainer);
+        object.built = mainDiv;
     }
 }
 
+//Defining page array of objects
+let page = [];
+let threeColumn = {
+    type: 'threeCol',
+    header: true,
+    h3: 'Popular Angi-Integrated Helmets',
+    link: '',
+    aText: 'Shop All ANGi-Integrated Helmets',
+    subItems: [
+        {
+            img: 'img/angi2.jpg',
+            h3: 'Protection Before',
+            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride
+            and, if you choose, to follow your ride in real time.`
+        },
+        {
+            img: 'img/angi2.jpg',
+            h3: 'Protection Before',
+            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride
+            and, if you choose, to follow your ride in real time.`
+        },
+        {
+            img: 'img/angi2.jpg',
+            h3: 'Protection Before',
+            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride
+            and, if you choose, to follow your ride in real time.`
+        },
+    ],
+    built: ''
+}
 
-let head = 'Welcome to SBC.x';
-let subHead = 'A look at specialized Bicycles innovation and information about their equipment & technology';
+page.push(threeColumn);
 
 
-let h3 = `Body Geometry by Specialized`;
-let p = `Innovative designs, personalized to your unique body and riding style.`;
-let aSrc = `/specialized-body-geometry/i712`;
-let aText = `Shop Now`;
-let img = `https://scontent.fsac1-1.fna.fbcdn.net/v/t1.6435-9/178569867_10157845709521604_7212701839133540701_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=0debeb&_nc_ohc=StNkj7uhANwAX9hDZIW&_nc_ht=scontent.fsac1-1.fna&oh=e449ccad5481297731e4883b6d1395ed&oe=60AAD0C5`;
-let overlay = true;
+for (let i = 0; i < page.length; i++) {
+    build[page[i].type](page[i]);
+    document.getElementById('lp-container').appendChild(page[i].built);
+}
 
-
-const halfJump = [];
-const itemOne = new JumpOff(h3, p, aSrc, aText, img, overlay);
-const itemTwo = new JumpOff(h3, p, aSrc, aText, img, overlay);
-halfJump.push(itemOne);
-halfJump.push(itemTwo);
-halfJump[1].fullWidthBuild('product');
+function builder(item, atr) {
+    item = document.createElement(item);
+    for (let i = 0; i < atr.length; i++) {
+        let attribute = atr[i];
+        item[attribute.atr] = attribute.val;
+    }
+    return item;
+}
