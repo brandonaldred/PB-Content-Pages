@@ -1,17 +1,3 @@
-class Component {
-    constructor(type, h3, p, link, aText, img, overlay,opt) {
-        this.type = type;
-        this.h3 = h3;
-        this.p = p;
-        this.link = link;
-        this.aText = aText;
-        this.img = img;
-        this.overlay = overlay;
-        this.opt = opt;
-        this.built = '';
-    }
-}
-
 const build = {
     leadIn: (object) => {
         const leadIn = builder('DIV', [{ atr: 'className', val: 'lp-lead-in' }]);
