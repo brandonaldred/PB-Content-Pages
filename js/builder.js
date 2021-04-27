@@ -18,9 +18,11 @@ const build = {
         const leadInCopy = builder('DIV', [{ atr: 'className', val: 'lp-lead-in-copy' }]);
         const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
         const p = builder('P', [{ atr: 'innerHTML', val: object.p }]);
+        const img = builder('IMG', [{ atr: 'src', val: object.img }]);
         leadInCopy.appendChild(h3);
         leadInCopy.appendChild(p);
         leadIn.appendChild(leadInCopy);
+        leadIn.appendChild(img);
         object.built = leadIn;
     },
     fullWidthHero: (object) => {
@@ -63,6 +65,10 @@ const build = {
         const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
         const p = builder('p', [{ atr: 'innerHTML', val: object.p }]);
         const a = builder('A', [{ atr: 'innerText', val: object.aText }, { atr: 'href', val: object.link } ]);
+        const learn = /^(learn)/i.test(object.aText)
+        if (learn) {
+            a.classList.add('lp-full-width-info-gray-outline-button');
+        }
 
         imgDiv.appendChild(img);
         mainDiv.appendChild(imgDiv);
@@ -117,38 +123,98 @@ const build = {
         }
         mainDiv.appendChild(columnContainer);
         object.built = mainDiv;
+    },
+    productGrid: (object) => {
+        const mainDiv = builder('DIV', [{ atr: 'className', val: 'lp-product' }]);
+        if (object.h3) {
+            const headerDiv = builder('DIV', [{ atr: 'className', val: 'lp-product-head' }]);
+            const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
+            headerDiv.appendChild(h3);
+            if (object.aLink) {
+                const a = builder('A', [{ atr: 'href', val: object.aLink }, { atr: 'innerText', val: object.aText}]);
+                headerDiv.appendChild(a);
+            }
+            mainDiv.appendChild(headerDiv);
+        }
+        const productGrid = builder('DIV', [{ atr: 'className', val: 'lp-product-grid' }])
+        for (let i = 0; i < object.subItems.length; i++) {
+            let divClass = '';
+            let lastItem = object.subItems.length - 1
+            i === lastItem && lastItem % 2 === 0 ? divClass = 'lp-full-width-product' : divClass = 'lp-half-width-product';
+            const productContainer = builder('DIV', [{ atr: 'className', val: divClass }]);
+            const imgContainer = document.createElement('DIV');
+            const img = builder('IMG', [{ atr: 'src', val: object.subItems[i].img }]);
+            if (object.subItems[i].type === 'product') {
+                imgContainer.className = 'lp-half-width-product-image';
+            }
+            if (object.subItems[i].type === 'lifestyle') {
+                imgContainer.className = 'lp-half-width-image';
+            }
+            imgContainer.appendChild(img);
+            const copyDiv = builder('DIV', [{ atr: 'className', val: 'lp-half-width-product-copy' }]);
+            const p = builder('P', [{ atr: 'innerHTML', val: object.subItems[i].p }]);
+            const a = builder('A', [{ atr: 'href', val: object.subItems[i].link }, { atr: 'innerText', val: object.subItems[i].aText }]);
+            copyDiv.appendChild(p);
+            copyDiv.appendChild(a);
+            productContainer.appendChild(imgContainer);
+            productContainer.appendChild(copyDiv);
+            productGrid.appendChild(productContainer);
+        }
+        mainDiv.appendChild(productGrid);
+        if (object.footLink) {
+            const footDiv = builder('DIV', [{ atr: 'className', val: 'lp-product-foot' }]);
+            const a = builder('A', [{ atr: 'href', val: object.footLink }, { atr: 'innerText', val: object.footText}]);
+            footDiv.appendChild(a);
+            mainDiv.appendChild(footDiv);
+        }
+        object.built = mainDiv;
     }
+    
 }
 
 //Defining page array of objects
 let page = [];
-let threeColumn = {
-    type: 'threeCol',
-    header: true,
-    h3: 'Popular Angi-Integrated Helmets',
-    link: 'link',
-    aText: 'Shop This LInk',
-    subItems: [
-        {
-            img: 'img/angi2.jpg',
-            h3: 'Protection Before',
-            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride and, if you choose, to follow your ride in real time.`
-        },
-        {
-            img: 'img/angi2.jpg',
-            h3: 'Protection Before',
-            p: `asdfasdfaANGi is a ride tracker. ANGi lets your emergency contacts<br /> know you’re heading out for a ride and, if you choose, to follow your ride in real time.`
-        },
-        {
-            img: 'img/angi2.jpg',
-            h3: 'Protection Before',
-            p: `ANGi is a ride tracker. ANGi lets your emergency contacts know you’re heading out for a ride and, if you choose, to follow your ride in real time.`
-        },
-    ],
+let element = {
+    type: 'productGrid',
+    h3: 'This is a header',
+    aText: 'This is a link',
+    aLink: '/linklocation',
+    subItems: [ {
+        img: 'https://images.amain.com/cdn-cgi/image/width=475/images/large/bikes/specialized/60121-0234.jpg',
+        type: 'product',
+        p: 'This is product 1',
+        aText: '/product1link',
+        aLink: 'Product 1 Link'
+    },{
+        img: 'https://images.amain.com/images/contentpages/performancebike/specialized/img/ROAD-2475-Hero1.jpg',
+        type: 'lifestyle',
+        p: 'This is product 2',
+        aText: '/product2link',
+        aLink: 'Product 2 Link'
+    }, {
+        img: 'https://images.amain.com/cdn-cgi/image/width=475/images/large/bikes/specialized/60121-0234.jpg',
+        type: 'product',
+        p: 'This is product 1',
+        aText: '/product1link',
+        aLink: 'Product 1 Link'
+    }, {
+        img: 'https://images.amain.com/cdn-cgi/image/width=475/images/large/bikes/specialized/60121-0234.jpg',
+        type: 'product',
+        p: 'This is product 1',
+        aText: '/product1link',
+        aLink: 'Product 1 Link'
+    },{
+        img: 'https://images.amain.com/images/contentpages/performancebike/specialized/img/ROAD-2475-Hero1.jpg',
+        type: 'lifestyle',
+        p: 'This is product 2',
+        aText: '/product2link',
+        aLink: 'Product 2 Link'
+    }],
+    footLink: 'footlinklocation',
+    footText: 'this is a footer link',
     built: ''
 }
-
-page.push(threeColumn);
+page.push(element);
 
 
 for (let i = 0; i < page.length; i++) {

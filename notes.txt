@@ -1,0 +1,12 @@
+1. Add flex-direction: row-reverse for right hand full width info div
+2. Add a class for right adjusted full-width-copy on the full-width div. flex-direction row-reverse and then text align right.
+
+product grid properties
+- type: productGrid;
+- h3:
+- aTxt:
+- aLnk:
+- subItems: [ img, type: lifestile || product, p, aTxt, aLnk ]
+- footLink:
+- footText:
+- built:
