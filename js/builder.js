@@ -9,7 +9,7 @@ const build = {
         leadInCopy.appendChild(p);
         leadIn.appendChild(leadInCopy);
         leadIn.appendChild(img);
-        object.built = leadIn;
+        object.html = leadIn;
     },
     fullWidthHero: (object) => {
         const mainDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width' }]);
@@ -34,7 +34,7 @@ const build = {
         //Putting it all together.
         mainDiv.appendChild(imgDiv);
         mainDiv.appendChild(copyDiv);
-        object.built = mainDiv;
+        object.html = mainDiv;
     },
     fullWidthInfo: (object) => {
         const mainDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width-info' }]);
@@ -62,7 +62,7 @@ const build = {
         copyDiv.appendChild(p);
         copyDiv.appendChild(a);
         mainDiv.appendChild(copyDiv);
-        object.built = mainDiv;
+        object.html = mainDiv;
     },
     paragraph: (object) => {
         const mainDiv = document.createElement('DIV');
@@ -76,17 +76,17 @@ const build = {
         }
         const p = builder('P', [{ atr: 'className', val: 'lp-body-copy' }, { atr: 'innerHTML', val: object.p }]);
         mainDiv.appendChild(p);
-        object.built = mainDiv;
+        object.html = mainDiv;
     },
     video: (object) => {
         const mainDiv = builder('DIV',[{ atr: 'className', val: 'lp-video' }]);
-        const iframe = builder('IFRAME', [{ atr: 'src', val: object.link }, { atr: 'frameBorder', val: '0' }, { atr: 'allow', val: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' }]);
+        const iframe = builder('IFRAME', [{ atr: 'src', val: object.videoId }, { atr: 'frameBorder', val: '0' }, { atr: 'allow', val: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' }]);
         mainDiv.appendChild(iframe);
-        object.built = mainDiv;
+        object.html = mainDiv;
     },
     threeCol: (object) => {
         const mainDiv = document.createElement('DIV');
-        if (object.header) {
+        if (object.h3) {
             const headerDiv = builder('DIV', [{ atr: 'className', val: 'lp-product-head' }]);
             const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
             headerDiv.appendChild(h3);
@@ -108,7 +108,7 @@ const build = {
             columnContainer.appendChild(column);
         }
         mainDiv.appendChild(columnContainer);
-        object.built = mainDiv;
+        object.html = mainDiv;
     },
     productGrid: (object) => {
         const mainDiv = builder('DIV', [{ atr: 'className', val: 'lp-product' }]);
@@ -153,7 +153,7 @@ const build = {
             footDiv.appendChild(a);
             mainDiv.appendChild(footDiv);
         }
-        object.built = mainDiv;
+        object.html = mainDiv;
     }
     
 }
@@ -198,14 +198,14 @@ let element = {
     }],
     footLink: 'footlinklocation',
     footText: 'this is a footer link',
-    built: ''
+    html: ''
 }
 page.push(element);
 
 
 for (let i = 0; i < page.length; i++) {
     build[page[i].type](page[i]);
-    document.getElementById('lp-container').appendChild(page[i].built);
+    document.getElementById('lp-container').appendChild(page[i].html);
 }
 
 function builder(item, atr) {
