@@ -269,9 +269,14 @@ vidBuilder.querySelector('a').addEventListener('click', (e) => {
     const element = new Video('video', videoId);
     console.log(element);
     page.push(element);
+    clearPage();
     pageConstruct(page);
 })
 
+function clearPage() {
+    const container = document.getElementById('lp-container');
+    container.innerHTML = '';
+}
 
 function pageConstruct(page) {
     for (let i = 0; i < page.length; i++) {
