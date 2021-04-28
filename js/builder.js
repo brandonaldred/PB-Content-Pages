@@ -89,6 +89,16 @@ class Video {
     }
 }
 
+//for use within the objects and methods to create elements
+function builder(item, atr) {
+    item = document.createElement(item);
+    for (let i = 0; i < atr.length; i++) {
+        let attribute = atr[i];
+        item[attribute.atr] = attribute.val;
+    }
+    return item;
+}
+
 
 const build = {
     leadIn: (object) => {
@@ -172,7 +182,7 @@ const build = {
     },
     video: (object) => {
         const mainDiv = builder('DIV',[{ atr: 'className', val: 'lp-video' }]);
-        const iframe = builder('IFRAME', [{ atr: 'src', val: object.videoId }, { atr: 'frameBorder', val: '0' }, { atr: 'allow', val: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' }]);
+        const iframe = builder('IFRAME', [{ atr: 'src', val: `https://www.youtube.com/embed/${object.videoId}` }, { atr: 'frameBorder', val: '0' }, { atr: 'allow', val: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' }]);
         mainDiv.appendChild(iframe);
         object.html = mainDiv;
     },
@@ -253,13 +263,19 @@ const build = {
 //Defining page array of objects
 let page = [];
 
-page.push();
+const vidBuilder = document.getElementById('video-builder');
+vidBuilder.querySelector('a').addEventListener('click', (e) => {
+    const videoId = document.getElementById('video').value;
+    const element = new Video('video', videoId);
+    console.log(element);
+    page.push(element);
+    pageConstruct(page);
+})
 
-function builder(item, atr) {
-    item = document.createElement(item);
-    for (let i = 0; i < atr.length; i++) {
-        let attribute = atr[i];
-        item[attribute.atr] = attribute.val;
+
+function pageConstruct(page) {
+    for (let i = 0; i < page.length; i++) {
+        build[page[i].type](page[i]);
+        document.getElementById('lp-container').appendChild(page[i].html);
     }
-    return item;
 }
