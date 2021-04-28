@@ -9,7 +9,7 @@ productGrid
     subItems: [ img, type: lifestile || product, p, aText, aLink ]
     footLink:
     footText:
-    built:
+    html:
 
 threeCol
     type: threeCol,
@@ -17,37 +17,46 @@ threeCol
     aText:
     aLink:
     subItems: [ img, h3, p ]
+    html:
+
+paragraph
+    type: paragraph,
+    h3:
+    p:
+    img:
+    html:
+
+fullWidthInfo
+    type: fullWidthInfo,
+    h3:
+    p:
+    aText:
+    aLink:
+    img:
+    opt: '' || 'lt' || 'dk',
+    align: 'left' || 'right',
+    html:
+
+fullWidthHero
+    type: fullWidthHero,
+    h3:
+    p:
+    aText:
+    aLink:
+    overlay: bool,
+    img:
+    align: 'left' || 'right',
+    html:
+
+leadIn (required on all pages):
+    type: leadIn,
+    h3:
+    p:
+    img:
+    html:
+
 
 video
     type: video,
     videoId: 
-
-paragraph
-    type: paragraph,
-    img:
-    h3:
-    p:
-
-fullWidthInfo
-    type: fullWidthInfo,
-    img:
-    opt: '' || 'lt' || 'dk',
-    h3:
-    p:
-    a:
-    align: 'left' || 'right',
-
-fullWidthHero
-    type: fullWidthHero,
-    overlay: bool,
-    img:
-    h3:
-    p:
-    a:
-    align: 'left' || 'right',
-
-leadIn (required on all pages):
-    type: leadIn,
-    img:
-    h3:
-    p:
+    html:

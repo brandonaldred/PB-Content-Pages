@@ -6,19 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page Builder</title>
+    <link rel="stylesheet" href="css/siteStyles.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/builder.css">
-    <link
-        href="https://www.performancebike.com/bundles/css/performancebike.css?v=63Np5idLs0yB_ATYT42eoXXSv-RNC6xr1-9rw_BDru_WU1"
-        rel="stylesheet">
 </head>
 
 <body>
     <div id="container">
         <div id="builder-container">
             <div id="lp-builder">
-                <label for="title">Job Role</label><br />
-                <select id="title" name="user-title">
+                <div class="form-field">
+                    <label for="video" name="video">YouTube Video ID<br/><span class="label-hint">Just the id after /watch?v=. Ex: OMbHgRH36uQ</span></label>
+                    <input id="video" type="text">
+                    <a class="build-submit">Add Element</a>
+                </div>
+                <!--<select id="title" name="user-title">
                     <option hidden>Select Job Role</option>
                     <option value="full-stack js developer">Full Stack JavaScript Developer</option>
                     <option value="front-end developer">Front End Developer</option>
@@ -27,6 +29,10 @@
                     <option value="student">Student</option>
                     <option value="other">Other</option>
                 </select>
+                <input type="text">
+                <input type="radio">
+                <input type="checkbox">
+                <textarea style="width: 100%; height: 400px; font-size: 12px;"></textarea> -->
             </div>
         </div>
         <div id="build">

@@ -14,10 +14,32 @@
     box-sizing: border-box;
 }
 
-
+#lp-builder label {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
 
 #lp-builder select {
     box-sizing: border-box;
+}
+
+#lp-builder .form-field input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+#lp-builder .form-field a {
+    display: block;
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 40px;
+}
+
+#lp-builder .form-field a:hover {
+    background-color: #464647;
 }
 
 
@@ -37,4 +59,9 @@
 #container {
     display: flex;
     align-items: flex-start;
+}
+
+.label-hint {
+    font-size: 12px;
+    color:#464647;
 }
