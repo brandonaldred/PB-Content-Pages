@@ -65,3 +65,39 @@
     font-size: 12px;
     color:#464647;
 }
+
+#lp-builder .build-wrap {
+
+}
+
+#build-elements .element-clear {
+    cursor: pointer !important;
+}
+
+#build-elements ul {
+    list-style: none;
+    margin-top: 30px;
+    padding:0;
+    margin-right: 0;
+}
+
+#build-elements li {
+    color: #464647;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #464647;
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+#build-elements li p {
+    display: inline;
+    width: 50%;
+    cursor: move;
+}
+
+.trash-icon {
+    width: 20px;
+    height: 20px;
+}

@@ -265,11 +265,10 @@ let page = [];
 
 const vidBuilder = document.getElementById('video-builder');
 vidBuilder.querySelector('a').addEventListener('click', (e) => {
-    const videoId = document.getElementById('video').value;
-    const element = new Video('video', videoId);
-    console.log(element);
+    const videoId = document.getElementById('video');
+    const element = new Video('video', videoId.value);
     page.push(element);
-    clearPage();
+    videoId.value = '';
     pageConstruct(page);
 })
 
@@ -279,8 +278,14 @@ function clearPage() {
 }
 
 function pageConstruct(page) {
+    clearPage();
     for (let i = 0; i < page.length; i++) {
         build[page[i].type](page[i]);
         document.getElementById('lp-container').appendChild(page[i].html);
     }
+}
+
+function wrapperDiv (append) {
+    const wrapper = builder('DIV', [{ atr: 'className', val: 'build-wrap' }]);
+    wrapper.appendChild(append);
 }
