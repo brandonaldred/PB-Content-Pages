@@ -171,7 +171,15 @@ const build = {
 }
 
 //Defining page array of objects
-let page = [];
+let page = [{
+    type: 'fullWidthInfo',
+    opt: 'wt',
+    h3: 'test text',
+    p: 'random test copy',
+    aLink: 'randomLink',
+    aText: 'Learn about endura ',
+    img: 'https://images.amain.com/images/contentpages/performancebike/grips_tape/tape_03.jpg'
+}];
 
 const vidBuilder = document.getElementById('video-builder');
 vidBuilder.querySelector('a').addEventListener('click', (e) => {
@@ -199,3 +207,4 @@ function wrapperDiv (append) {
     const wrapper = builder('DIV', [{ atr: 'className', val: 'build-wrap' }]);
     wrapper.appendChild(append);
 }
+pageConstruct(page);
