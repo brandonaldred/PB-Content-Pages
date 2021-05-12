@@ -23,25 +23,44 @@
     box-sizing: border-box;
 }
 
-#lp-builder .form-field input {
+#lp-builder .form-fields input {
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 10px;
 }
 
-#lp-builder .form-field a {
+#lp-builder .form-fields a {
     display: block;
     background-color: black;
     color: white;
     text-align: center;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 10px 40px;
+    width: 40%;
 }
 
-#lp-builder .form-field a:hover {
+#lp-builder .form-fields a:hover {
     background-color: #464647;
 }
 
+.builder {
+    margin-bottom: 50px;
+}
+
+#lp-builder h2 {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#lp-builder h3 {
+    font-size: 22px;
+    color: #616161;
+    border-bottom: 1px solid #BBBBBB;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: Tungsten, sans-serif;
+}
 
 #lp-builder input::before {
     all: initial;
@@ -75,7 +94,6 @@
 }
 
 #build-elements ul {
-    list-style: none;
     margin-top: 30px;
     padding:0;
     margin-right: 0;
@@ -100,4 +118,8 @@
 .trash-icon {
     width: 20px;
     height: 20px;
+}
+
+.builder-form {
+    display: none;
 }
