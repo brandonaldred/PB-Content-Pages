@@ -1,62 +1,99 @@
 1. Add flex-direction: row-reverse for right hand full width info div
 2. Add a class for right adjusted full-width-copy on the full-width div. flex-direction row-reverse and then text align right.
 
-productGrid
-    type: productGrid,
-    h3:
-    aText:
-    aLink:
-    subItems: [ img, type: lifestile || product, p, aText, aLink ]
-    footLink:
-    footText:
-    html:
-
-threeCol
-    type: threeCol,
-    h3:
-    aText:
-    aLink:
-    subItems: [ img, h3, p ]
-    html:
-
-paragraph
-    type: paragraph,
-    h3:
-    p:
-    img:
-    html:
-
-fullWidthInfo
-    type: fullWidthInfo,
-    h3:
-    p:
-    aText:
-    aLink:
-    img:
-    opt: '' || 'lt' || 'dk',
-    align: 'left' || 'right',
-    html:
-
-fullWidthHero
-    type: fullWidthHero,
-    h3:
-    p:
-    aText:
-    aLink:
-    overlay: bool,
-    img:
-    align: 'left' || 'right',
-    html:
-
-leadIn (required on all pages):
-    type: leadIn,
-    h3:
-    p:
-    img:
-    html:
-
-
-video
-    type: video,
-    videoId: 
-    html:
+ <div class="form-fields">
+                    <div id="lead-in-builder" class="builder">
+                        <h2>Lead-In</h2>
+                        <div class="builder-form">
+                            <label for="lead-in-image" name="lead-in-image">Image</label><br />
+                            <input id="lead-in-image" type="text"><br />
+                            <label for="lead-in-title" name="lead-in-title">Title</label><br />
+                            <input id="lead-in-title" type="text"><br />
+                            <label for="lead-in-text" name="lead-in-text">Text</label><br />
+                            <input id="lead-in-text" type="text"><br />
+                            <a class="build-submit">Add Element</a>
+                        </div>
+                    </div>
+                    <div id="full-width-hero-builder" class="builder">
+                        <h2>Full Width Hero</h2>
+                    </div>
+                    <div id="paragraph-builder" class="builder">
+                        <h2>Paragraph</h2>
+                        <div class="builder-form">
+                            <label for="paragraph-image" name="paragraph-image">Image</label><br />
+                            <input id="paragraph-image" type="text"><br />
+                            <label for="paragraph-title" name="paragraph-title">Title</label><br />
+                            <input id="paragraph-title" type="text"><br />
+                            <label for="paragraph-text" name="paragraph-text">Text</label><br />
+                            <textarea id="paragraph-text" name="paragraph-text" cols="35" rows="20"></textarea><br />
+                            <a class="build-submit">Add Element</a>
+                        </div>
+                    </div>
+                    <div id="full-width-info-builder" class="builder">
+                        <h2>Full Width Info</h2>
+                    </div>
+                    <div id="product-grid-builder" class="builder">
+                        <h2>Product Grid</h2>
+                    </div>
+                    <div id="three-col-builder" class="builder">
+                        <h2>Three Column</h2>
+                        <div class="builder-form">
+                            <label for="header" name="header">Header</label><br />
+                            <input id="header" type="text"><br />
+                            <label for="text-link" name="text-link">Text Link</label><br />
+                            <input id="text-link" type="text"><br />
+                            <h3>Item 1</h3>
+                            <label for="item-1-image" name="item-1-image">Image</label><br />
+                            <input id="item-1-image" type="text"><br />
+                            <label for="item-1-title" name="item-1-title">Title</label><br />
+                            <input id="item-1-title" type="text"><br />
+                            <label for="item-1-text" name="item-1-text">Text</label><br />
+                            <input id="item-1-text" type="text"><br />
+                            <h3>Item 2</h3>
+                            <label for="item-2-image" name="item-2-image">Image</label><br />
+                            <input id="item-2-image" type="text"><br />
+                            <label for="item-2-title" name="item-2-title">Title</label><br />
+                            <input id="item-2-title" type="text"><br />
+                            <label for="item-2-text" name="item-2-text">Text</label><br />
+                            <input id="item-2-text" type="text"><br />
+                            <h3>Item 3</h3>
+                            <label for="item-3-image" name="item-3-image">Image</label><br />
+                            <input id="item-3-image" type="text"><br />
+                            <label for="item-3-title" name="item-3-title">Title</label><br />
+                            <input id="item-3-title" type="text"><br />
+                            <label for="item-3-text" name="item-3-text">Text</label><br />
+                            <input id="item-3-text" type="text"><br />
+                            <a class="build-submit">Add Element</a>
+                        </div>
+                    </div>
+                    <div id="video-builder" class="builder">
+                        <h2>Video</h2>
+                        <div class="builder-form">
+                            <label for="video" name="video">YouTube Video ID<br /><span class="label-hint">Just the id
+                                    after /watch?v=. Ex: OMbHgRH36uQ</span></label>
+                            <input id="video" type="text">
+                            <a class="build-submit">Add Element</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+                    <select id="title" name="user-title">
+                    <option hidden>Select Job Role</option>
+                    <option value="full-stack js developer">Full Stack JavaScript Developer</option>
+                    <option value="front-end developer">Front End Developer</option>
+                    <option value="back-end developer">Back End Developer</option>
+                    <option value="designer">Designer</option>
+                    <option value="student">Student</option>
+                    <option value="other">Other</option>
+                </select>
+                <input type="text">
+                <input type="radio">
+                <input type="checkbox">
+                <textarea style="width: 100%; height: 400px; font-size: 12px;"></textarea>
+                <div id="build-elements">
+                    <ul>
+                        <li><p>Video</p><div><img class="trash-icon" src="img/trash.png"></div></li> 
+                    </ul>
+                </div>
+                -->

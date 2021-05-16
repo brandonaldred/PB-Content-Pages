@@ -53,19 +53,28 @@ const build = {
         const imgDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width-info-image' }]);
         const img = builder('IMG', [{ atr: 'src', val: object.img }]);
         const copyDiv = builder('DIV',[{ atr: 'className', val: 'lp-full-width-info-copy' }]);
-        if (object.opt === 'dk') {
-            copyDiv.classList.add('lp-full-width-info-dk-bg');
-            console.log('dark');
-        }
-        if (object.opt === 'lt') {
-            copyDiv.classList.add('lp-full-width-info-lt-bg');
-        }
         const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
         const p = builder('p', [{ atr: 'innerHTML', val: object.p }]);
-        const a = builder('A', [{ atr: 'innerText', val: object.aText }, { atr: 'href', val: object.link } ]);
-        const learn = /^(learn)/i.test(object.aText)
+        const a = builder('A', [{ atr: 'innerText', val: object.aText }, { atr: 'href', val: object.aLink } ]);
+        const learn = /^(learn)/i.test(object.aText);
+        let learnButton = 'lp-full-width-info-gray-outline-button';
+        let copyDivClass;
+        if (object.opt) {
+            if (object.opt === 'dk') {
+                copyDivClass = 'lp-full-width-info-dk-bg';
+                learnButton = 'lp-full-width-info-white-outline-button';
+            }
+            if (object.opt === 'lt') {
+                copyDivClass = 'lp-full-width-info-lt-bg';
+            }
+
+            copyDiv.classList.add(copyDivClass);
+        }
+
+        console.log(learnButton);
+
         if (learn) {
-            a.classList.add('lp-full-width-info-gray-outline-button');
+            a.classList.add(learnButton);
         }
 
         imgDiv.appendChild(img);
@@ -167,13 +176,13 @@ const build = {
         }
         object.html = mainDiv;
     }
-    
+
 }
 
 //Defining page array of objects
 let page = [{
     type: 'fullWidthInfo',
-    opt: 'wt',
+    opt: 'dk',
     h3: 'test text',
     p: 'random test copy',
     aLink: 'randomLink',
@@ -181,14 +190,14 @@ let page = [{
     img: 'https://images.amain.com/images/contentpages/performancebike/grips_tape/tape_03.jpg'
 }];
 
-const vidBuilder = document.getElementById('video-builder');
-vidBuilder.querySelector('a').addEventListener('click', (e) => {
-    const videoId = document.getElementById('video');
-    const element = new Video('video', videoId.value);
-    page.push(element);
-    videoId.value = '';
-    pageConstruct(page);
-})
+// const vidBuilder = document.getElementById('video-builder');
+// vidBuilder.querySelector('a').addEventListener('click', (e) => {
+//     const videoId = document.getElementById('video');
+//     const element = new Video('video', videoId.value);
+//     page.push(element);
+//     videoId.value = '';
+//     pageConstruct(page);
+// })
 
 function clearPage() {
     const container = document.getElementById('lp-container');
