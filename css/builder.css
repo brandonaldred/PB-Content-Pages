@@ -16,7 +16,6 @@
 
 #lp-builder label {
     font-size: 14px;
-    margin-bottom: 30px;
 }
 
 #lp-builder select {
@@ -24,6 +23,12 @@
 }
 
 #lp-builder .form-fields input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+#lp-builder .form-fields textarea {
     margin-top: 15px;
     margin-bottom: 15px;
     padding: 10px;
@@ -40,7 +45,15 @@
 }
 
 #lp-builder .form-fields a:hover {
-    background-color: #464647;
+    background-color: #464647 !important;
+}
+
+#lp-builder .builder-form a {
+    margin-top: 10px;
+}
+
+#lp-builder .builder-form textarea {
+    margin-top: 10px;
 }
 
 .builder {
@@ -115,5 +128,19 @@
 }
 
 .builder-form {
-    display: none;
+    
+}
+
+.accordion-button {
+    color: #464647 !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #464647 !important;
+    color: white !important;
+} 
+
+
+.accordion-button:not(.collapsed)::after {
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
 }

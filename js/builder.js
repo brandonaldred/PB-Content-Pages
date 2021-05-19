@@ -71,8 +71,6 @@ const build = {
             copyDiv.classList.add(copyDivClass);
         }
 
-        console.log(learnButton);
-
         if (learn) {
             a.classList.add(learnButton);
         }
@@ -186,18 +184,18 @@ let page = [{
     h3: 'test text',
     p: 'random test copy',
     aLink: 'randomLink',
-    aText: 'Learn about endura ',
-    img: 'https://images.amain.com/images/contentpages/performancebike/grips_tape/tape_03.jpg'
+    aText: 'Shop about endura ',
+    img: 'https://images.amain.com/images/large/bikes/giordana/gics21-bibs-frcp-oliv02.jpg'
 }];
 
-// const vidBuilder = document.getElementById('video-builder');
-// vidBuilder.querySelector('a').addEventListener('click', (e) => {
-//     const videoId = document.getElementById('video');
-//     const element = new Video('video', videoId.value);
-//     page.push(element);
-//     videoId.value = '';
-//     pageConstruct(page);
-// })
+const vidBuilder = document.getElementById('video-builder');
+vidBuilder.querySelector('a').addEventListener('click', (e) => {
+    const videoId = document.getElementById('video');
+    const element = new Video('video', videoId.value);
+    page.push(element);
+    videoId.value = '';
+    pageConstruct(page);
+})
 
 function clearPage() {
     const container = document.getElementById('lp-container');
