@@ -85,8 +85,10 @@ const build = {
     },
     paragraph: (object) => {
         const mainDiv = document.createElement('DIV');
+        console.log(object);
         if (object.img) {
-            const img = builder('IMG', [{ atr: 'className', val: 'lp-body-copy-image' }, { atr: 'src', val: 'img/angihelmets.jpg'}]);
+            const img = builder('IMG', [{ atr: 'className', val: 'lp-body-copy-image' }, { atr: 'src', val: object.img }]);
+            console.log('This ran');
             mainDiv.appendChild(img);
         }
         if (object.h3) {
@@ -178,24 +180,59 @@ const build = {
 }
 
 //Defining page array of objects
-let page = [{
-    type: 'fullWidthInfo',
-    opt: 'dk',
-    h3: 'test text',
-    p: 'random test copy',
-    aLink: 'randomLink',
-    aText: 'Shop about endura ',
-    img: 'https://images.amain.com/images/large/bikes/giordana/gics21-bibs-frcp-oliv02.jpg'
-}];
+let page = [];
 
+//Video Builder Form Elements
 const vidBuilder = document.getElementById('video-builder');
 vidBuilder.querySelector('a').addEventListener('click', (e) => {
-    const videoId = document.getElementById('video');
+    const videoId = document.getElementById('video-id');
     const element = new Video('video', videoId.value);
     page.push(element);
     videoId.value = '';
     pageConstruct(page);
-})
+});
+
+//Paragraph Builder Form Elements
+const paragraphBuilder = document.getElementById('paragraph-builder');
+paragraphBuilder.querySelector('a').addEventListener('click', (e) => {
+    const img = document.getElementById('paragraph-img');
+    const h3 = document.getElementById('paragraph-h3');
+    const p = document.getElementById('paragraph-p');
+    const element = new Paragraph('paragraph', h3.value, p.value, img.value);
+    page.push(element);
+    img.value = '';
+    h3.value = '';
+    p.value = '';
+    pageConstruct(page);
+
+});
+
+const addParagraphImg = document.getElementById('add-paragraph-img');
+addParagraphImg.addEventListener('change', (e) => {
+    const imgForm = document.getElementById('paragraph-img');
+    e.target.checked ? imgForm.style.display = '' : imgForm.style.display = 'none';
+});
+
+const addParagraphH3 = document.getElementById('add-paragraph-h3');
+addParagraphH3.addEventListener('change', (e) => {
+    const h3Form = document.getElementById('paragraph-h3');
+    e.target.checked ? h3Form.style.display = '' : h3Form.style.display = 'none';
+});
+
+//Lead-In Builder Form Elements
+const leadInBuilder = document.getElementById('leadin-builder');
+leadInBuilder.querySelector('a').addEventListener('click', (e) => {
+    const img = document.getElementById('leadin-img');
+    const h3 = document.getElementById('leadin-h3');
+    const p = document.getElementById('leadin-p');
+    const element = new Paragraph('leadIn', h3.value, p.value, img.value);
+    page.push(element);
+    img.value = '';
+    h3.value = '';
+    p.value = '';
+    pageConstruct(page);
+
+});
 
 function clearPage() {
     const container = document.getElementById('lp-container');
