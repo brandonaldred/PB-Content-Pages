@@ -234,6 +234,11 @@ leadInBuilder.querySelector('a').addEventListener('click', (e) => {
 
 });
 
+const exportHTMLButton = document.querySelector('.html-export');
+exportHTMLButton.addEventListener('click', () => {
+    
+})
+
 function clearPage() {
     const container = document.getElementById('lp-container');
     container.innerHTML = '';
@@ -251,4 +256,5 @@ function wrapperDiv (append) {
     const wrapper = builder('DIV', [{ atr: 'className', val: 'build-wrap' }]);
     wrapper.appendChild(append);
 }
+
 pageConstruct(page);
