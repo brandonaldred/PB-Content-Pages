@@ -234,6 +234,62 @@ leadInBuilder.querySelector('a').addEventListener('click', (e) => {
 
 });
 
+//Full-Width Info Builder Form Elements
+const fullWidthInfoBuilder = document.getElementById('full-width-info-builder');
+fullWidthInfoBuilder.querySelector('a').addEventListener('click', (e) => {
+    const img = document.getElementById('full-width-info-img');
+    const h3 = document.getElementById('full-width-info-h3');
+    const p = document.getElementById('full-width-info-p');
+    const aText = document.getElementById('full-width-info-a-text');
+    const aLink = document.getElementById('full-width-info-a-link');
+    const opt = document.getElementById('full-width-info-opt');
+    //const align = document.getElementById('full-width-info-align');
+    console.log(img.value);
+    console.log(h3.value);
+    console.log(p.value);
+    console.log(aText.value);
+    console.log(aLink.value);
+    console.log(opt.value);
+    const element = new FullWidthInfo('fullWidthInfo', h3.value, p.value, aText.value, aLink.value, img.value, opt.value, 'left');
+    page.push(element);
+    img.value = '';
+    h3.value = '';
+    p.value = '';
+    aText.value = '';
+    aLink.value = '';
+    //align.value = '';
+    pageConstruct(page);
+
+});
+
+//Full-Width Hero Builder Form Elements
+const fullWidthHeroBuilder = document.getElementById('full-width-hero-builder');
+fullWidthHeroBuilder.querySelector('a').addEventListener('click', (e) => {
+    const img = document.getElementById('full-width-hero-img');
+    const h3 = document.getElementById('full-width-hero-h3');
+    const p = document.getElementById('full-width-hero-p');
+    const aText = document.getElementById('full-width-hero-a-text');
+    const aLink = document.getElementById('full-width-hero-a-link');
+    const opt = document.getElementById('full-width-hero-opt');
+    //const align = document.getElementById('full-width-info-align');
+    console.log(img.value);
+    console.log(h3.value);
+    console.log(p.value);
+    console.log(aText.value);
+    console.log(aLink.value);
+    console.log(opt.checked);
+    const element = new FullWidthHero('fullWidthHero', h3.value, p.value, aText.value, aLink.value, img.value, 'left', opt.checked, );
+    page.push(element);
+    img.value = '';
+    h3.value = '';
+    p.value = '';
+    aText.value = '';
+    aLink.value = '';
+    //align.value = '';
+    pageConstruct(page);
+
+});
+
 const exportHTMLButton = document.querySelector('.html-export');
 exportHTMLButton.addEventListener('click', () => {
     
