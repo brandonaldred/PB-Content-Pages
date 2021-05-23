@@ -287,7 +287,6 @@ fullWidthHeroBuilder.querySelector('a').addEventListener('click', (e) => {
     aLink.value = '';
     //align.value = '';
     pageConstruct(page);
-
 });
 
 const exportHTMLButton = document.querySelector('.html-export');
