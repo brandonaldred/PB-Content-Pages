@@ -147,8 +147,8 @@ const build = {
             mainDiv.appendChild(headerDiv);
         }
         const productGrid = builder('DIV', [{ atr: 'className', val: 'lp-product-grid' }]);
-        console.log(object);
         for (let i = 0; i < object.subItems.length; i++) {
+            console.log(object.subItems);
             let divClass = '';
             let lastItem = object.subItems.length - 1
             i === lastItem && lastItem % 2 === 0 ? divClass = 'lp-full-width-product' : divClass = 'lp-half-width-product';
@@ -248,12 +248,6 @@ fullWidthInfoBuilder.querySelector('a').addEventListener('click', (e) => {
     const aLink = document.getElementById('full-width-info-a-link');
     const opt = document.getElementById('full-width-info-opt');
     //const align = document.getElementById('full-width-info-align');
-    console.log(img.value);
-    console.log(h3.value);
-    console.log(p.value);
-    console.log(aText.value);
-    console.log(aLink.value);
-    console.log(opt.value);
     const element = new FullWidthInfo('fullWidthInfo', h3.value, p.value, aText.value, aLink.value, img.value, opt.value, 'left');
     page.push(element);
     img.value = '';
@@ -325,7 +319,6 @@ productGridBuilder.querySelector('.btn-dark').addEventListener('click', (e) => {
     const aText = document.getElementById('product-grid-aText').value;
     const aLink = document.getElementById('product-grid-aLink').value;
     const products = document.querySelectorAll('.product');
-    console.log(products);
     const prodArr = [];
     products.forEach(function(item) {
         const prodH3 = item.querySelector('.product-h3').value;
@@ -333,7 +326,10 @@ productGridBuilder.querySelector('.btn-dark').addEventListener('click', (e) => {
         const prodImg = item.querySelector('.product-img').value;
         const prodLink = item.querySelector('.product-aLink').value;
         const prodLinkText = item.querySelector('.product-aText').value;
-        product = new Product('product',prodH3,prodP,prodLinkText,prodLink,prodImg);
+        const whiteBG = item.querySelector('.white-bg');
+        let type = '';
+        whiteBG ? type = 'product' : type = 'lifestyle';
+        product = new Product(type,prodH3,prodP,prodLinkText,prodLink,prodImg);
         prodArr.push(product);
         prodH3.value = '';
         prodP.value = '';
@@ -341,7 +337,6 @@ productGridBuilder.querySelector('.btn-dark').addEventListener('click', (e) => {
         prodLink.value = '';
         prodLinkText.value = '';
     });
-    console.log(prodArr);
     const footerText = document.getElementById('product-grid-footer-aText').value;
     const footerLink = document.getElementById('product-grid-footer-aLink').value;
     const element = new ProductGrid('productGrid', h3,aText,aLink,prodArr,footerLink,footerText);
@@ -384,7 +379,6 @@ function wrapperDiv (append) {
 function productFormBuilder() {
     const productBlock = document.getElementById('product-block');
     const count = productBlock.querySelectorAll('DIV');
-    console.log(count);
     const container = builder('DIV', [{atr: 'className', val: 'product'}]);
     const h3 = builder('H3', [{atr: 'innerText', val: `Product ${count.length + 1}`}]);
     const imgInput = builder('INPUT', [
@@ -400,7 +394,7 @@ function productFormBuilder() {
         {atr: 'innerText', val: 'Insert img URL'}
     ]);
     const noBgInput = builder('INPUT', [
-        {atr: 'className', val: 'form-check-input'},
+        {atr: 'className', val: 'form-check-input white-bg'},
         {atr: 'type', val: 'checkbox'},
         {atr: 'value', val:''},
         {atr: 'id', val: `product-${count.length + 1}-nobg-img`},
