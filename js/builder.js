@@ -16,11 +16,13 @@ const build = {
         const leadInCopy = builder('DIV', [{ atr: 'className', val: 'lp-lead-in-copy' }]);
         const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
         const p = builder('P', [{ atr: 'innerHTML', val: object.p }]);
-        const img = builder('IMG', [{ atr: 'src', val: object.img }]);
         leadInCopy.appendChild(h3);
         leadInCopy.appendChild(p);
         leadIn.appendChild(leadInCopy);
-        leadIn.appendChild(img);
+        if (object.img) {
+            const img = builder('IMG', [{ atr: 'src', val: object.img }]);
+            leadIn.appendChild(img);
+        }
         object.html = leadIn;
     },
     fullWidthHero: (object) => {
@@ -107,12 +109,13 @@ const build = {
     },
     threeCol: (object) => {
         const mainDiv = document.createElement('DIV');
+        mainDiv.className = 'lp-three-col';
         if (object.h3) {
             const headerDiv = builder('DIV', [{ atr: 'className', val: 'lp-product-head' }]);
             const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
             headerDiv.appendChild(h3);
-            if (object.link) {
-                const a = builder('A', [{ atr: 'href', val: object.link }, { atr: 'innerText', val: object.aText}]);
+            if (object.aLink) {
+                const a = builder('A', [{ atr: 'href', val: object.aLink }, { atr: 'innerText', val: object.aText}]);
                 headerDiv.appendChild(a);
             }
             mainDiv.appendChild(headerDiv);
@@ -143,7 +146,8 @@ const build = {
             }
             mainDiv.appendChild(headerDiv);
         }
-        const productGrid = builder('DIV', [{ atr: 'className', val: 'lp-product-grid' }])
+        const productGrid = builder('DIV', [{ atr: 'className', val: 'lp-product-grid' }]);
+        console.log(object);
         for (let i = 0; i < object.subItems.length; i++) {
             let divClass = '';
             let lastItem = object.subItems.length - 1
@@ -272,12 +276,6 @@ fullWidthHeroBuilder.querySelector('a').addEventListener('click', (e) => {
     const aLink = document.getElementById('full-width-hero-a-link');
     const opt = document.getElementById('full-width-hero-opt');
     //const align = document.getElementById('full-width-info-align');
-    console.log(img.value);
-    console.log(h3.value);
-    console.log(p.value);
-    console.log(aText.value);
-    console.log(aLink.value);
-    console.log(opt.checked);
     const element = new FullWidthHero('fullWidthHero', h3.value, p.value, aText.value, aLink.value, img.value, 'left', opt.checked, );
     page.push(element);
     img.value = '';
@@ -288,6 +286,77 @@ fullWidthHeroBuilder.querySelector('a').addEventListener('click', (e) => {
     //align.value = '';
     pageConstruct(page);
 });
+
+
+//Three Column Builder Form Elements D:/Programming/Work Tools/PB-Content-Pages/img/angi1.jpg
+const threeColumnBuilder = document.getElementById('three-column-builder');
+threeColumnBuilder.querySelector('a').addEventListener('click', (e) => {
+    const h3 = document.getElementById('three-column-h3').value;
+    const aText = document.getElementById('three-column-aText').value;
+    const aLink = document.getElementById('three-column-aLink').value;
+    const columns = document.querySelectorAll('.column');
+    const colArr = [];
+    columns.forEach(function(item) {
+        const colH3 = item.querySelector('.column-h3').value;
+        const colP = item.querySelector('.column-p').value;
+        const colImg = item.querySelector('.column-img').value;
+        column = new Column(colH3, colP, colImg);
+        colArr.push(column);
+        colH3.value = '';
+        colP.value = '';
+        colImg.value = '';
+    });
+    const footerText = document.getElementById('three-column-footer-aText').value;
+    const footerLink = document.getElementById('three-column-footer-aLink').value;
+    const element = new ThreeCol('threeCol', h3,aText,aLink,colArr,footerText,footerLink);
+    page.push(element);
+    h3.value = '';
+    aText.value = '';
+    aLink.value = '';
+    footerText.value = '';
+    footerLink.value ='';
+    pageConstruct(page);
+});
+
+//Product Grid Builder Form Elements D:/Programming/Work Tools/PB-Content-Pages/img/angi1.jpg
+const productGridBuilder = document.getElementById('product-grid-builder');
+productGridBuilder.querySelector('.btn-dark').addEventListener('click', (e) => {
+    const h3 = document.getElementById('product-grid-h3').value;
+    const aText = document.getElementById('product-grid-aText').value;
+    const aLink = document.getElementById('product-grid-aLink').value;
+    const products = document.querySelectorAll('.product');
+    console.log(products);
+    const prodArr = [];
+    products.forEach(function(item) {
+        const prodH3 = item.querySelector('.product-h3').value;
+        const prodP = item.querySelector('.product-p').value;
+        const prodImg = item.querySelector('.product-img').value;
+        const prodLink = item.querySelector('.product-aLink').value;
+        const prodLinkText = item.querySelector('.product-aText').value;
+        product = new Product('product',prodH3,prodP,prodLinkText,prodLink,prodImg);
+        prodArr.push(product);
+        prodH3.value = '';
+        prodP.value = '';
+        prodImg.value = '';
+        prodLink.value = '';
+        prodLinkText.value = '';
+    });
+    console.log(prodArr);
+    const footerText = document.getElementById('product-grid-footer-aText').value;
+    const footerLink = document.getElementById('product-grid-footer-aLink').value;
+    const element = new ProductGrid('productGrid', h3,aText,aLink,prodArr,footerLink,footerText);
+    page.push(element);
+    h3.value = '';
+    aText.value = '';
+    aLink.value = '';
+    footerText.value = '';
+    footerLink.value ='';
+    pageConstruct(page);
+});
+
+const addProductButton = document.getElementById('add-product').querySelector('a');
+addProductButton.addEventListener('click', (e) => { productFormBuilder() })
+
 
 const exportHTMLButton = document.querySelector('.html-export');
 exportHTMLButton.addEventListener('click', () => {
@@ -310,6 +379,108 @@ function pageConstruct(page) {
 function wrapperDiv (append) {
     const wrapper = builder('DIV', [{ atr: 'className', val: 'build-wrap' }]);
     wrapper.appendChild(append);
+}
+
+function productFormBuilder() {
+    const productBlock = document.getElementById('product-block');
+    const count = productBlock.querySelectorAll('DIV');
+    console.log(count);
+    const container = builder('DIV', [{atr: 'className', val: 'product'}]);
+    const h3 = builder('H3', [{atr: 'innerText', val: `Product ${count.length + 1}`}]);
+    const imgInput = builder('INPUT', [
+        {atr: 'type', val: 'text'},
+        {atr: 'className', val: 'form-label form-control-sm product-img'},
+        {atr: 'id', val: `product-${count.length + 1}-img`},
+        {atr: 'placeholder', val: 'Insert img URL'}
+    ]);
+    const imgLabel = builder('LABEL', [
+        {atr: 'for', val: `product-${count.length + 1}-img`},
+        {atr: 'className', val: 'form-label'},
+        {atr: 'style', val: `display:none;`},
+        {atr: 'innerText', val: 'Insert img URL'}
+    ]);
+    const noBgInput = builder('INPUT', [
+        {atr: 'className', val: 'form-check-input'},
+        {atr: 'type', val: 'checkbox'},
+        {atr: 'value', val:''},
+        {atr: 'id', val: `product-${count.length + 1}-nobg-img`},
+        {atr: 'checked', val: false}
+    ]);
+    const noBgLabel = builder('LABEL', [
+        {atr: 'className', val: 'form-label  form-check-label'},
+        {atr: 'for', val: `product-${count.length + 1}-nobg-img`},
+        {atr: 'innerText', val: 'Image is on white BG'}
+    ]);
+    const headerInput = builder('INPUT', [
+        {atr: 'type', val: 'text'},
+        {atr: 'className', val: 'form-label form-control-sm product-h3'},
+        {atr: 'id', val: `product-${count.length + 1}-h3`},
+        {atr: 'placeholder', val: 'Insert Product Header'}
+    ]);
+    const headerLabel = builder('Label', [
+        {atr: 'className', val: 'form-label'},
+        {atr: 'for', val: `product-${count.length + 1}-h3`},
+        {atr: 'style', val: 'display: none;'},
+        {atr: 'innerText', val: 'Add a Header'}
+    ]);
+    const copyBox = builder('TEXTAREA', [
+        {atr: 'className', val: 'form-control product-p'},
+        {atr: 'placeholder', val: 'Insert Product Copy'},
+        {atr: 'style', val: 'height: 100px; width: 100%;'},
+        {atr: 'id', val: `product-${count.length + 1}-p`},
+    ]);
+    const copyLabel = builder('LABEL', [
+        {atr: 'for', val: `product-${count.length + 1}-p`},
+        {atr: 'style', val: 'display: none;'},
+        {atr: 'innerText', val: 'Product Text'}
+    ]);
+    const footerLink = builder('INPUT', [
+        {atr: 'className', val: 'form-label form-control-sm product-aLink'},
+        {atr: 'placeholder', val: 'Insert Button URL'},
+        {atr: 'type', val: 'text'},
+        {atr: 'id', val: `product-${count.length + 1}-aLink"`}
+    ]);
+    const footerLinkLabel = builder('LABEL', [
+        {atr: 'for', val: `product-${count.length + 1}-aLink`},
+        {atr: 'className', val: 'form-label'},
+        {atr: 'style', val: 'display: none;'},
+        {atr: 'innerText', val: 'Insert Button URL'}
+    ]);
+    const footerText = builder('INPUT', [
+        {atr: 'className', val: 'form-label form-control-sm product-aText'},
+        {atr: 'placeholder', val: 'Insert Button Text'},
+        {atr: 'type', val: 'text'},
+        {atr: 'id', val: `product-${count.length + 1}-aText"`}
+    ]);
+    const footerTextLabel = builder('LABEL', [
+        {atr: 'for', val: `product-${count.length + 1}-aText`},
+        {atr: 'className', val: 'form-label'},
+        {atr: 'style', val: 'display: none;'},
+        {atr: 'innerText', val: 'Insert Button Text'}
+    ]);
+
+
+    container.appendChild(h3);
+    container.appendChild(imgInput);
+    container.appendChild(document.createElement('BR'));
+    container.appendChild(imgLabel);
+    container.appendChild(document.createElement('BR'));
+    container.appendChild(noBgInput);
+    container.appendChild(noBgLabel);
+    container.appendChild(document.createElement('BR'));
+    container.appendChild(headerInput);
+    container.appendChild(headerLabel);
+    container.appendChild(document.createElement('BR'));
+    container.appendChild(copyBox);
+    container.appendChild(copyLabel);
+    container.appendChild(document.createElement('BR'));
+    container.appendChild(footerLink);
+    container.appendChild(footerLinkLabel);
+    container.appendChild(document.createElement('BR'));
+    container.appendChild(footerText);
+    container.appendChild(footerTextLabel);
+    container.appendChild(document.createElement('BR'));
+    productBlock.appendChild(container);
 }
 
 pageConstruct(page);

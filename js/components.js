@@ -11,8 +11,9 @@ class ProductGrid {
 }
 
 class Product {
-    constructor(type,p,aText,aLink,img) {
+    constructor(type,h3,p,aText,aLink,img) {
         this.type = type;
+        this.h3 = h3;
         this.p = p;
         this.aText = aText;
         this.aLink = aLink;
@@ -21,12 +22,14 @@ class Product {
 }
 
 class ThreeCol {
-    constructor(type,h3,aText,aLink,subItems) {
+    constructor(type,h3,aText,aLink,subItems,footerText,footerLink) {
         this.type = type;
         this.h3 = h3;
         this.aText = aText;
         this.aLink = aLink;
         this.subItems = subItems;
+        this.footerText = footerText;
+        this.footerLink = footerLink;
     }
 }
 

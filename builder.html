@@ -16,6 +16,13 @@
     <div id="container">
         <div id="builder-container">
             <div id="lp-builder">
+                <div id="lp-builder-instructions">
+                    <h3>Landing Page Builder Notes</h3>
+                    <p style="color: #616161; font-size: 14px; line-height: 1.5em;"><b>Every page should begin with a lead-in component</b></p>
+                    <p style="color: #616161; font-size: 14px; line-height: 1.5em;"><b>Creating a Jump Off Page</b><br />Start with a lead-in element without an image link followed by a full width hero element.</p>
+                    <p style="color: #616161; font-size: 14px; line-height: 1.5em;">
+                    <p style="color: #616161; font-size: 14px; line-height: 1.5em;"><b>In a quick and dirty phase.</b><br />Click an element to add it to the page.<br />If you leave any field blank it will be ignored in the build.<br />Some images may need to be scaled to proper aspect ratios, so mock up layouts in FIGMA first before using this.</p>
+                </div>
                 <!-- Beg of builder elements-->
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
@@ -206,8 +213,6 @@
                             <div class="accordion-body">
                                 <div class="builder-form" id="three-column-builder">
                                     <h3>Header</h3>
-                                    <input class="form-check-input" type="checkbox" value="" id="add-three-column-header">
-                                    <label class="form-label  form-check-label" for="add-image">Add Header Block</label><br />
                                     <div id="header-block">
                                         <input type="text" class="form-label form-control-sm" id="three-column-h3" placeholder="Insert Fancy Header">
                                         <label class="form-label" for="three-column-h3" style="display: none;">Add a Header</label><br />
@@ -217,42 +222,95 @@
                                         <label class="form-label" for="three-column-aLink" style="display: none;">Insert  Button URL</label><br />
                                     </div>
                                     <div id="column-block">
-                                        <div id="column-1">
+                                        <div class="column">
                                             <h3>Column 1</h3>
-                                            <input type="text" class="form-label form-control-sm" id="column-1-h3" placeholder="Insert Column Header">
+                                            <input type="text" class="form-label form-control-sm column-h3" id="column-1-h3" placeholder="Insert Column Header">
                                             <label class="form-label" for="column-1-h3" style="display: none;">Add a Header</label><br />
-                                            <textarea class="form-control" placeholder="Insert Column Copy" id="column-1-p" style="height: 100px; width: 100%;"></textarea>
+                                            <textarea class="form-control column-p" placeholder="Insert Column Copy" id="column-1-p" style="height: 100px; width: 100%;"></textarea>
                                             <label for="column-1-p" style="display: none;">Column Text</label><br />
-                                            <input type="text" class="form-label form-control-sm" id="column-1-img" placeholder="Insert img URL">
+                                            <input type="text" class="form-label form-control-sm column-img" id="column-1-img" placeholder="Insert img URL">
                                             <label class="form-label" for="column-1-img" style="display: none;">Insert img URL</label><br />
                                         </div>
-                                        <div id="column-2">
+                                        <div class="column">
                                             <h3>Column 2</h3>
-                                            <input type="text" class="form-label form-control-sm" id="column-2-h3" placeholder="Insert Column Header">
+                                            <input type="text" class="form-label form-control-sm column-h3" id="column-2-h3" placeholder="Insert Column Header">
                                             <label class="form-label" for="column-2-h3" style="display: none;">Add a Header</label><br />
-                                            <textarea class="form-control" placeholder="Insert Column Copy" id="column-2-p" style="height: 100px; width: 100%;"></textarea>
+                                            <textarea class="form-control column-p" placeholder="Insert Column Copy" id="column-2-p" style="height: 100px; width: 100%;"></textarea>
                                             <label for="column-2-p" style="display: none;">Column Text</label><br />
-                                            <input type="text" class="form-label form-control-sm" id="column-2-img" placeholder="Insert img URL">
+                                            <input type="text" class="form-label form-control-sm column-img" id="column-2-img" placeholder="Insert img URL">
                                             <label class="form-label" for="column-2-img" style="display: none;">Insert img URL</label><br />
                                         </div>
-                                        <div id="column-3">
+                                        <div class="column">
                                             <h3>Column 3</h3>
-                                            <input type="text" class="form-label form-control-sm" id="column-3-h3" placeholder="Insert Column Header">
+                                            <input type="text" class="form-label form-control-sm column-h3" id="column-3-h3" placeholder="Insert Column Header">
                                             <label class="form-label" for="column-3-h3" style="display: none;">Add a Header</label><br />
-                                            <textarea class="form-control" placeholder="Insert Column Copy" id="column-3-p" style="height: 100px; width: 100%;"></textarea>
+                                            <textarea class="form-control column-p" placeholder="Insert Column Copy" id="column-3-p" style="height: 100px; width: 100%;"></textarea>
                                             <label for="column-3-p" style="display: none;">Column Text</label><br />
-                                            <input type="text" class="form-label form-control-sm" id="column-3-img" placeholder="Insert img URL">
+                                            <input type="text" class="form-label form-control-sm column-img" id="column-3-img" placeholder="Insert img URL">
                                             <label class="form-label" for="column-3-img" style="display: none;">Insert img URL</label><br />
                                         </div>
                                     </div>
-                                    <div id="footer-block">
-                                        <h3>Footer</h3>
-                                        <input class="form-check-input" type="checkbox" value="" id="add-three-column-footer">
-                                        <label class="form-label  form-check-label" for="add-threecolumn-footer">Add Footer</label><br />
-                                        <label class="form-label" for="three-column-footer-aText" style="display: none;">Insert Button Text</label><br />
-                                        <input type="text" class="form-label form-control-sm" id="three-column-footer-aText" placeholder="Insert Button Text">
-                                        <label class="form-label" for="three-column-footer-aLink" style="display: none;">Insert Button URL</label><br />
+                                    <h3 style="display: none;">Footer</h3>
+                                    <div style="display: none;" id="footer-block">
                                         <input type="text" class="form-label form-control-sm" id="three-column-footer-aLink" placeholder="Insert Button URL">
+                                        <label class="form-label" for="three-column-footer-aLink" style="display: none;">Insert  Button URL</label><br />
+                                        <input type="text" class="form-label form-control-sm" id="three-column-footer-aText" placeholder="Insert Button Text">
+                                        <label class="form-label" for="three-column-footer-aText" style="display: none;">Insert  Button Text</label><br />
+                                    </div>
+                                    <a class="btn btn-dark">Add Element</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Add Product Grid
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="builder-form" id="product-grid-builder">
+                                    <h3>Header</h3>
+                                    <div id="header-block">
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-h3" placeholder="Insert Fancy Header">
+                                        <label class="form-label" for="product-grid-h3" style="display: none;">Add a Header</label><br />
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-aText" placeholder="Insert Button Text">
+                                        <label class="form-label" for="product-grid-aText" style="display: none;">Insert Button Text</label><br />
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-aLink" placeholder="Insert Button URL">
+                                        <label class="form-label" for="product-grid-aLink" style="display: none;">Insert  Button URL</label><br />
+                                    </div>
+                                    <div id="product-block">
+                                        <div class="product">
+                                            <h3>Product 1</h3>
+                                            <input type="text" class="form-label form-control-sm product-img" id="product-1-img" placeholder="Insert img URL"><br />
+                                            <label class="form-label" for="product-1-img" style="display: none;">Insert img URL</label><br />
+                                            <input class="form-check-input" type="checkbox" value="" id="product-1-nobg-img">
+                                            <label class="form-label  form-check-label" for="product-1-nobg-img">Image is on white BG</label><br />
+                                            <input type="text" class="form-label form-control-sm product-h3" id="product-1-h3" placeholder="Insert Product Header">
+                                            <label class="form-label" for="product-1-h3" style="display: none;">Add a Header</label><br />
+                                            <textarea class="form-control product-p" placeholder="Insert Product Copy" id="product-1-p" style="height: 100px; width: 100%;"></textarea>
+                                            <label for="product-1-p" style="display: none;">Product Text</label><br />
+                                            <input type="text" class="form-label form-control-sm product-aLink" id="product-1-aLink" placeholder="Insert Button URL">
+                                            <label class="form-label" for="product-1-aLink" style="display: none;">Insert Button URL</label><br />
+                                            <input type="text" class="form-label form-control-sm product-aText" id="product-1-aText" placeholder="Insert Button Text">
+                                            <label class="form-label product-aText" for="product-1-aText" style="display: none;">Insert Button Text</label><br />
+                                        </div>
+                                    </div>
+                                    <div id="add-product">
+                                        <h3>Add another Product</h3>
+                                        <a class="btn btn-outline-secondary">Add Product</a>
+                                        <br/>
+                                        <hr>
+                                    </div>
+                                    <h3>Footer</h3>
+                                    <div id="product-grid-footer-block">
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-footer-aLink" placeholder="Insert Button URL">
+                                        <label class="form-label" for="product-grid-footer-aLink" style="display: none;">Insert  Button URL</label><br />
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-footer-aText" placeholder="Insert Button Text">
+                                        <label class="form-label" for="product-grid-footer-aText" style="display: none;">Insert  Button Text</label><br />
                                     </div>
                                     <a class="btn btn-dark">Add Element</a>
                                 </div>
@@ -260,7 +318,11 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-dark html-export" style="margin-top: 35px;">Copy HTML to Clipboard</a>
+                <div id="export">
+                    <a class="btn btn-dark html-export" style="margin-top: 35px;">Copy HTML to Clipboard</a>
+                    <textarea style="margin-top: 15px;" class="form-control" placeholder="HTML Code" id="export-html" style="height: 300px; width: 100%;"></textarea>
+                    <label for="export-html" style="display: none;">HTML Code</label><br />
+                </div>
             </div>
         </div>
         <!--
