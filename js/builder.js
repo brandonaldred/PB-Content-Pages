@@ -41,7 +41,7 @@ const build = {
         const copyDiv = builder('DIV', [{ atr: 'className', val: 'lp-full-width-copy' }]);
         const h3 = builder('H3', [{ atr: 'innerHTML', val: object.h3 }]);
         const p = builder('P', [{ atr: 'innerHTML', val: object.p }]);
-        const a = builder('A', [{ atr: 'innerText', val: object.aText }, { atr: 'src', val: object.aLink }, { atr: 'className', val: 'lp-full-width-info-white-outline-button' }]);
+        const a = builder('A', [{ atr: 'innerText', val: object.aText }, { atr: 'href', val: object.aLink }, { atr: 'className', val: 'lp-full-width-info-white-outline-button' }]);
         copyDiv.appendChild(h3);
         copyDiv.appendChild(p);
         copyDiv.appendChild(a);
