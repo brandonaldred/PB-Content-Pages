@@ -87,10 +87,8 @@ const build = {
     },
     paragraph: (object) => {
         const mainDiv = document.createElement('DIV');
-        console.log(object);
         if (object.img) {
             const img = builder('IMG', [{ atr: 'className', val: 'lp-body-copy-image' }, { atr: 'src', val: object.img }]);
-            console.log('This ran');
             mainDiv.appendChild(img);
         }
         if (object.h3) {
@@ -148,7 +146,6 @@ const build = {
         }
         const productGrid = builder('DIV', [{ atr: 'className', val: 'lp-product-grid' }]);
         for (let i = 0; i < object.subItems.length; i++) {
-            console.log(object.subItems);
             let divClass = '';
             let lastItem = object.subItems.length - 1
             i === lastItem && lastItem % 2 === 0 ? divClass = 'lp-full-width-product' : divClass = 'lp-half-width-product';
@@ -291,10 +288,10 @@ threeColumnBuilder.querySelector('a').addEventListener('click', (e) => {
     const columns = document.querySelectorAll('.column');
     const colArr = [];
     columns.forEach(function(item) {
-        const colH3 = item.querySelector('.column-h3').value;
-        const colP = item.querySelector('.column-p').value;
-        const colImg = item.querySelector('.column-img').value;
-        column = new Column(colH3, colP, colImg);
+        const colH3 = item.querySelector('.column-h3');
+        const colP = item.querySelector('.column-p');
+        const colImg = item.querySelector('.column-img');
+        column = new Column(colH3.value, colP.value, colImg.value);
         colArr.push(column);
         colH3.value = '';
         colP.value = '';
@@ -315,31 +312,32 @@ threeColumnBuilder.querySelector('a').addEventListener('click', (e) => {
 //Product Grid Builder Form Elements D:/Programming/Work Tools/PB-Content-Pages/img/angi1.jpg
 const productGridBuilder = document.getElementById('product-grid-builder');
 productGridBuilder.querySelector('.btn-dark').addEventListener('click', (e) => {
-    const h3 = document.getElementById('product-grid-h3').value;
-    const aText = document.getElementById('product-grid-aText').value;
-    const aLink = document.getElementById('product-grid-aLink').value;
+    const h3 = document.getElementById('product-grid-h3');
+    const aText = document.getElementById('product-grid-aText');
+    const aLink = document.getElementById('product-grid-aLink');
     const products = document.querySelectorAll('.product');
     const prodArr = [];
     products.forEach(function(item) {
-        const prodH3 = item.querySelector('.product-h3').value;
-        const prodP = item.querySelector('.product-p').value;
-        const prodImg = item.querySelector('.product-img').value;
-        const prodLink = item.querySelector('.product-aLink').value;
-        const prodLinkText = item.querySelector('.product-aText').value;
+        let prodH3 = item.querySelector('.product-h3');
+        let prodP = item.querySelector('.product-p');
+        let prodImg = item.querySelector('.product-img');
+        let prodLink = item.querySelector('.product-aLink');
+        let prodLinkText = item.querySelector('.product-aText');
         const whiteBG = item.querySelector('.white-bg');
         let type = '';
-        whiteBG ? type = 'product' : type = 'lifestyle';
-        product = new Product(type,prodH3,prodP,prodLinkText,prodLink,prodImg);
+        whiteBG.checked ? type = 'product' : type = 'lifestyle';
+        product = new Product(type,prodH3.value,prodP.value,prodLinkText.value,prodLink.value,prodImg.value);
         prodArr.push(product);
         prodH3.value = '';
         prodP.value = '';
         prodImg.value = '';
         prodLink.value = '';
         prodLinkText.value = '';
+        whiteBG.checked = false;
     });
     const footerText = document.getElementById('product-grid-footer-aText').value;
     const footerLink = document.getElementById('product-grid-footer-aLink').value;
-    const element = new ProductGrid('productGrid', h3,aText,aLink,prodArr,footerLink,footerText);
+    const element = new ProductGrid('productGrid', h3.value,aText.value,aLink.value,prodArr,footerLink.value,footerText.value);
     page.push(element);
     h3.value = '';
     aText.value = '';
@@ -353,22 +351,35 @@ const addProductButton = document.getElementById('add-product').querySelector('a
 addProductButton.addEventListener('click', (e) => { productFormBuilder() })
 
 
-const exportHTMLButton = document.querySelector('.html-export');
+const exportHTMLButton = document.querySelector('.html-export-button');
 exportHTMLButton.addEventListener('click', () => {
-    
+    copyHTML();
 })
 
 function clearPage() {
     const container = document.getElementById('lp-container');
+    const htmlTextBox = document.getElementById('export-html');
     container.innerHTML = '';
+    htmlTextBox.value = '';
 }
 
 function pageConstruct(page) {
     clearPage();
+    let htmlBox = document.getElementById('export-html');
+    htmlBox.value = '<div id="lp-container">';
     for (let i = 0; i < page.length; i++) {
         build[page[i].type](page[i]);
         document.getElementById('lp-container').appendChild(page[i].html);
+        htmlBox.value += page[i].html.outerHTML;
     }
+    htmlBox.value += '</div>';
+}
+
+function copyHTML() {
+    const text = document.getElementById('export-html');
+    text.select();
+    document.execCommand('copy');
+    alert('HTML Copied');
 }
 
 function wrapperDiv (append) {
