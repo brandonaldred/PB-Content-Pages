@@ -4,8 +4,6 @@ Local storage/cache incase you refresh page.
 
 1. Add flex-direction: row-reverse for right hand full width info div
 2. Add a class for right adjusted full-width-copy on the full-width div. flex-direction row-reverse and then text align right.
-3. Fix lead in image. Wrap in a div with a height (on desktop and mobile) with overflow hidden and image full width
-4. If paragraph has image there needs to be a min-height on the div.
 5. Add footer button to three column component.
 
 
