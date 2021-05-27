@@ -1,4 +1,3 @@
-
 //for use within the objects and methods to create elements
 function builder(item, atr) {
     item = document.createElement(item);
@@ -20,8 +19,10 @@ const build = {
         leadInCopy.appendChild(p);
         leadIn.appendChild(leadInCopy);
         if (object.img) {
+            const imgContainer = builder('DIV', [{atr: 'className', val: 'lp-lead-in-image-container'}])
             const img = builder('IMG', [{ atr: 'src', val: object.img }]);
-            leadIn.appendChild(img);
+            imgContainer.appendChild(img);
+            leadIn.appendChild(imgContainer);
         }
         object.html = leadIn;
     },
@@ -335,8 +336,8 @@ productGridBuilder.querySelector('.btn-dark').addEventListener('click', (e) => {
         prodLinkText.value = '';
         whiteBG.checked = false;
     });
-    const footerText = document.getElementById('product-grid-footer-aText').value;
-    const footerLink = document.getElementById('product-grid-footer-aLink').value;
+    const footerText = document.getElementById('product-grid-footer-aText');
+    const footerLink = document.getElementById('product-grid-footer-aLink');
     const element = new ProductGrid('productGrid', h3.value,aText.value,aLink.value,prodArr,footerLink.value,footerText.value);
     page.push(element);
     h3.value = '';

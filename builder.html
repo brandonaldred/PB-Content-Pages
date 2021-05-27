@@ -24,62 +24,7 @@
                     <p style="color: #616161; font-size: 14px; line-height: 1.5em;"><b>In a quick and dirty phase.</b><br />Click an element to add it to the page.<br />If you leave any field blank it will be ignored in the build.<br />Some images may need to be scaled to proper aspect ratios, so mock up layouts in FIGMA first before using this.</p>
                 </div>
                 <!-- Beg of builder elements-->
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Add Video
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="builder-form" id="video-builder">
-                                    <label class="form-label" for="video" name="video">YouTube Video ID<br /><span
-                                            class="label-hint">Just the id after /watch?v=. Ex:
-                                            OMbHgRH36uQ</span></label>
-                                    <input class="form-control" id="video-id" type="text"><br />
-                                    <a class="btn btn-dark">Add Element</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Add A Paragraph
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="builder-form" id="paragraph-builder">
-                                    <input class="form-check-input" type="checkbox" value="" id="add-paragraph-img"
-                                        checked>
-                                    <label class="form-label  form-check-label" for="add-image">Add an
-                                        Image</label><br />
-                                    <input type="text" class="form-label form-control-sm" id="paragraph-img"
-                                        placeholder="Insert Image Link">
-                                    <label class="form-label" for="floatingInput" style="display: none;">Add Image
-                                        Link</label><br />
-                                    <input class="form-check-input" type="checkbox" value="" id="add-paragraph-h3"
-                                        checked>
-                                    <label class="form-label  form-check-label" for="add-header">Add a
-                                        Header</label><br />
-                                    <input type="text" class="form-label form-control-sm" id="paragraph-h3"
-                                        placeholder="Insert Fancy Header">
-                                    <label class="form-label" for="floatingInput" style="display: none;">Add a
-                                        Header</label><br />
-                                    <textarea class="form-control-sm" placeholder="Insert Your Paragraph Copy Here"
-                                        id="paragraph-p" style="height: 350px; width: 100%;"></textarea>
-                                    <label for="floatingTextarea2" style="display: none;">Paragraph Copy</label>
-                                    <a class="btn btn-dark">Add Element</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Lead-In Builder -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -108,6 +53,92 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Paragraph Builder -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Add A Paragraph
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="builder-form" id="paragraph-builder">
+                                    <input class="form-check-input" type="checkbox" value="" id="add-paragraph-img">
+                                    <label class="form-label  form-check-label" for="add-image">Add an Image</label><br />
+                                    <input type="text" class="form-label form-control-sm" id="paragraph-img" placeholder="Insert Image Link" style="display: none;">
+                                    <label class="form-label" for="floatingInput" style="display: none;">Add Image Link</label><br />
+                                    <input class="form-check-input" type="checkbox" value="" id="add-paragraph-h3">
+                                    <label class="form-label  form-check-label" for="add-header">Add a Header</label><br />
+                                    <input type="text" class="form-label form-control-sm" id="paragraph-h3" placeholder="Insert Fancy Header" style="display: none;">
+                                    <label class="form-label" for="floatingInput" style="display: none;">Add a
+                                        Header</label><br />
+                                    <textarea class="form-control-sm" placeholder="Insert Your Paragraph Copy Here"
+                                        id="paragraph-p" style="height: 350px; width: 100%;"></textarea>
+                                    <label for="floatingTextarea2" style="display: none;">Paragraph Copy</label>
+                                    <a class="btn btn-dark">Add Element</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Grid Builder -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Add Product Grid
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="builder-form" id="product-grid-builder">
+                                    <h3>Header</h3>
+                                    <div id="header-block">
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-h3" placeholder="Insert Fancy Header">
+                                        <label class="form-label" for="product-grid-h3" style="display: none;">Add a Header</label><br />
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-aText" placeholder="Insert Button Text">
+                                        <label class="form-label" for="product-grid-aText" style="display: none;">Insert Button Text</label><br />
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-aLink" placeholder="Insert Button URL">
+                                        <label class="form-label" for="product-grid-aLink" style="display: none;">Insert  Button URL</label><br />
+                                    </div>
+                                    <div id="product-block">
+                                        <div class="product">
+                                            <h3>Product 1</h3>
+                                            <input type="text" class="form-label form-control-sm product-img" id="product-1-img" placeholder="Insert img URL"><br />
+                                            <label class="form-label" for="product-1-img" style="display: none;">Insert img URL</label><br />
+                                            <input class="form-check-input white-bg" type="checkbox" value="" id="product-1-nobg-img">
+                                            <label class="form-label  form-check-label" for="product-1-nobg-img">Image is on white BG</label><br />
+                                            <input type="text" class="form-label form-control-sm product-h3" id="product-1-h3" placeholder="Insert Product Header">
+                                            <label class="form-label" for="product-1-h3" style="display: none;">Add a Header</label><br />
+                                            <textarea class="form-control product-p" placeholder="Insert Product Copy" id="product-1-p" style="height: 100px; width: 100%;"></textarea>
+                                            <label for="product-1-p" style="display: none;">Product Text</label><br />
+                                            <input type="text" class="form-label form-control-sm product-aLink" id="product-1-aLink" placeholder="Insert Button URL">
+                                            <label class="form-label" for="product-1-aLink" style="display: none;">Insert Button URL</label><br />
+                                            <input type="text" class="form-label form-control-sm product-aText" id="product-1-aText" placeholder="Insert Button Text">
+                                            <label class="form-label product-aText" for="product-1-aText" style="display: none;">Insert Button Text</label><br />
+                                        </div>
+                                    </div>
+                                    <div id="add-product">
+                                        <h3>Add another Product</h3>
+                                        <a class="btn btn-outline-secondary">Add Product</a>
+                                        <br/>
+                                        <hr>
+                                    </div>
+                                    <h3>Footer</h3>
+                                    <div id="product-grid-footer-block">
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-footer-aLink" placeholder="Insert Button URL">
+                                        <label class="form-label" for="product-grid-footer-aLink" style="display: none;">Insert  Button URL</label><br />
+                                        <input type="text" class="form-label form-control-sm" id="product-grid-footer-aText" placeholder="Insert Button Text">
+                                        <label class="form-label" for="product-grid-footer-aText" style="display: none;">Insert  Button Text</label><br />
+                                    </div>
+                                    <a class="btn btn-dark">Add Element</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Full Width Info Builder -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFour">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -157,6 +188,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Full Width Hero Builder -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingFive">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -201,6 +233,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Three Column Grid Builder -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingSix">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -262,61 +295,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingSeven">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                Add Product Grid
-                            </button>
-                        </h2>
-                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="builder-form" id="product-grid-builder">
-                                    <h3>Header</h3>
-                                    <div id="header-block">
-                                        <input type="text" class="form-label form-control-sm" id="product-grid-h3" placeholder="Insert Fancy Header">
-                                        <label class="form-label" for="product-grid-h3" style="display: none;">Add a Header</label><br />
-                                        <input type="text" class="form-label form-control-sm" id="product-grid-aText" placeholder="Insert Button Text">
-                                        <label class="form-label" for="product-grid-aText" style="display: none;">Insert Button Text</label><br />
-                                        <input type="text" class="form-label form-control-sm" id="product-grid-aLink" placeholder="Insert Button URL">
-                                        <label class="form-label" for="product-grid-aLink" style="display: none;">Insert  Button URL</label><br />
+                    <!-- Video Builder -->
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Add Video
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <div class="builder-form" id="video-builder">
+                                        <label class="form-label" for="video" name="video">YouTube Video ID<br /><span
+                                                class="label-hint">Just the id after /watch?v=. Ex:
+                                                OMbHgRH36uQ</span></label>
+                                        <input class="form-control" id="video-id" type="text"><br />
+                                        <a class="btn btn-dark">Add Element</a>
                                     </div>
-                                    <div id="product-block">
-                                        <div class="product">
-                                            <h3>Product 1</h3>
-                                            <input type="text" class="form-label form-control-sm product-img" id="product-1-img" placeholder="Insert img URL"><br />
-                                            <label class="form-label" for="product-1-img" style="display: none;">Insert img URL</label><br />
-                                            <input class="form-check-input white-bg" type="checkbox" value="" id="product-1-nobg-img">
-                                            <label class="form-label  form-check-label" for="product-1-nobg-img">Image is on white BG</label><br />
-                                            <input type="text" class="form-label form-control-sm product-h3" id="product-1-h3" placeholder="Insert Product Header">
-                                            <label class="form-label" for="product-1-h3" style="display: none;">Add a Header</label><br />
-                                            <textarea class="form-control product-p" placeholder="Insert Product Copy" id="product-1-p" style="height: 100px; width: 100%;"></textarea>
-                                            <label for="product-1-p" style="display: none;">Product Text</label><br />
-                                            <input type="text" class="form-label form-control-sm product-aLink" id="product-1-aLink" placeholder="Insert Button URL">
-                                            <label class="form-label" for="product-1-aLink" style="display: none;">Insert Button URL</label><br />
-                                            <input type="text" class="form-label form-control-sm product-aText" id="product-1-aText" placeholder="Insert Button Text">
-                                            <label class="form-label product-aText" for="product-1-aText" style="display: none;">Insert Button Text</label><br />
-                                        </div>
-                                    </div>
-                                    <div id="add-product">
-                                        <h3>Add another Product</h3>
-                                        <a class="btn btn-outline-secondary">Add Product</a>
-                                        <br/>
-                                        <hr>
-                                    </div>
-                                    <h3>Footer</h3>
-                                    <div id="product-grid-footer-block">
-                                        <input type="text" class="form-label form-control-sm" id="product-grid-footer-aLink" placeholder="Insert Button URL">
-                                        <label class="form-label" for="product-grid-footer-aLink" style="display: none;">Insert  Button URL</label><br />
-                                        <input type="text" class="form-label form-control-sm" id="product-grid-footer-aText" placeholder="Insert Button Text">
-                                        <label class="form-label" for="product-grid-footer-aText" style="display: none;">Insert  Button Text</label><br />
-                                    </div>
-                                    <a class="btn btn-dark">Add Element</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <!-- End of builder elements-->
                 </div>
                 <div id="export">
